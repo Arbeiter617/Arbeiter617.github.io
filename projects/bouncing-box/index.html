@@ -1,28 +1,176 @@
 <!DOCTYPE html>
 <html>
+
+
+    
+<body>
+ <audio controls autoplay>
+  <source src="https://docs.google.com/uc?export=download&id=1Q1SFwYCa2GDBl-zRHE4QSjJm0xr8Nya3" type="audio/ogg">
+  <source src="https://docs.google.com/uc?export=download&id=1Q1SFwYCa2GDBl-zRHE4QSjJm0xr8Nya3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+
+ <h1 style="color:greenyellow;">Welcome to the Bouncing Box Game!</h1>
+
+<p style="color:red;">Hit the PLAY button to play some music!.</p>
+<p style="color:red;">Use the Stopwatch to see how fast you can hit the box!.</p>
+<p style="color:red;">Also, if you like the song, download it by hitting the three little dots!</p>
+<h2 style="color:greenyellow;">Enjoy!</h2>
+<img src="https://docs.google.com/uc?export=download&id=1zHmsAPqe-L48ycnO9m3Sul_6l9kYaSDL" alt="Wink" width="40" height="40">
+<p><a href="https://drive.google.com/file/d/1hgNUevxvT4tHaQcWbG4ZLhoOxXWzeZGn/view">Want to know how I did it? Click HERE!</a></p>
+<p><a href="https://arbeiter617.github.io/">Not liking this game? Check out my other fun projects!</a></p>
+
+
+</body>
+
+
 <head>
+    <title>JavaScript</title>
+
+        <link rel="stylesheet" href="style.css">
+    
 	<meta charset="utf-8">
-	<title>Bouncing Box</title>
+    <title>Bouncing Box</title>
 	<script src="jquery.min.js"></script>
 	<style>
+        
+
+        
 		.box {
-			width: 70px;
-			height: 70px;
-			background-color: teal;
-			font-size: 300%;
+            background-image: url("images/Red_Ball.png");
+			width: 165px;
+			height: 165px;
+            background-color: black;
+			font-size: 200%;
 			text-align: center;
 			display: block;
 			position: absolute;
 			top: 100px;
 			left: 0px;  /* <--- Change me! */
 		}
-	</style>
+    </style>
+    
 	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 
 </head>
+
 <body class="board">
 	<!-- HTML for the box -->
-	<div class="box">?</div>
+    <div class="box">?</div>
+            <div id="stopwatch">
+            00:00:00
+        </div>
+
+        <ul id="buttons">
+            <li><button onclick="startTimer()">Start</button></li>
+            <li><button onclick="stopTimer()">Stop</button></li>
+
+            <li><button onclick="resetTimer()">Reset</button></li>
+        </ul>
+
+        <script src="main.js"></script>
+
+        <style>
+            body {
+    background: #202020;
+    color: white;
+}
+button {
+    width: 100px;
+    height: 30px;
+    border: 3px soldi white;
+    border-radius: 50px;
+    background: #202020;
+    color: white;
+    cursor: pointer;
+    outline: none;
+}
+
+#stopwatch {
+    font-size: 100px;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+}
+#buttons {
+    position: absolute;
+    top: 55%;
+    left: 48.4%;
+    transform: translate(-51.6%, -45%);
+}
+#buttons li {
+    display: inline;
+    padding-left: 10px;
+}
+
+        </style>
+    
+    <script>
+        const timer = document.getElementById('stopwatch');
+
+var hr = 0;
+var min = 0;
+var sec = 0;
+var stoptime = true;
+
+function startTimer() {
+  if (stoptime == true) {
+        stoptime = false;
+        timerCycle();
+    }
+}
+function stopTimer() {
+  if (stoptime == false) {
+    stoptime = true;
+  }
+}
+
+function timerCycle() {
+    if (stoptime == false) {
+    sec = parseInt(sec);
+    min = parseInt(min);
+    hr = parseInt(hr);
+
+    sec = sec + 1;
+
+    if (sec == 60) {
+      min = min + 1;
+      sec = 0;
+    }
+    if (min == 60) {
+      hr = hr + 1;
+      min = 0;
+      sec = 0;
+    }
+
+    if (sec < 10 || sec == 0) {
+      sec = '0' + sec;
+    }
+    if (min < 10 || min == 0) {
+      min = '0' + min;
+    }
+    if (hr < 10 || hr == 0) {
+      hr = '0' + hr;
+    }
+
+    timer.innerHTML = hr + ':' + min + ':' + sec;
+
+    setTimeout("timerCycle()", 1000);
+  }
+}
+
+function resetTimer() {
+    timer.innerHTML = '00:00:00';
+}
+    </script>
+
+
+
+    
+ 
+    
 
 	<script>
 		(function(){
@@ -41,12 +189,17 @@
 			setInterval(update, 50);
 			
 			// Every time the box is clicked, call the handleBoxClick Function (see below)
-			box.on('click', handleBoxClick);
+            box.on('click', handleBoxClick);
+            
+               
+                
 
 			// moves the Box to a new position on the screen along the X-Axis
 			function moveBoxTo(newPositionX) {
-				box.css("left", newPositionX);
-			}
+                box.css("left", newPositionX);
+                
+            }
+            
 
 			// changes the text displayed on the Box
 			function changeBoxText(newText) {
@@ -57,7 +210,11 @@
 			/////////////////// YOUR CODE BELOW HERE /////////////////////////
 			//////////////////////////////////////////////////////////////////
 			
-			// TODO 2 - Variable declarations 
+            // TODO 2 - Variable declarations 
+            var positionX = 0;
+            var points = 0
+            var speed = 5
+
 			
 
 			
@@ -66,10 +223,27 @@
 			it should move the Box to a new location. If the box drifts off the screen
 			turn it around! 
 			*/
-			function update() {
-				
+            function update() {
+               positionX = positionX + speed;
+               moveBoxTo(positionX);
+            
+               if (positionX > boardWidth) {
+                   speed = -speed;
+               }
+                
+                if (positionX < 0) {
+                    speed = -speed;
 
-			};
+            }
+        }
+              
+            
+               
+               
+               
+               
+
+			
 
 			/* 
 			This Function will be called each time the box is clicked. Each time it is called,
@@ -77,7 +251,11 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				
+                positionX = 0;
+                points = points + 1
+                changeBoxText(points);
+                speed = speed + 3
+
 
 
 			};
