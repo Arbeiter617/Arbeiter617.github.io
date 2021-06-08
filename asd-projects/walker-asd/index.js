@@ -11,7 +11,7 @@ function runProgram(){
   
   var FRAMES_PER_SECOND_INTERVAL = 1000 / 60;
   var BOARD_WIDTH = $('#board').width();
-  var BOARD_HIGHT = $(window).hight();
+  var BOARD_HIGHT = $(window).height();
   var  KEY = {
       "LEFT": 37,
       "UP": 38,
@@ -22,14 +22,15 @@ function runProgram(){
   var positionX = 0;
   var positionY = 0;
   var speedX = 0;
-  var speedX = 0;
+  var speedY = 0;
   
   // Game Item Objects
 
 
   // one-time setup
   var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
-  $(document).on('keydown', handleKeyDown);                           // change 'eventType' to the type of event you want to handle
+  $(document).on('keydown', handleKeyDown); 
+  $(document).on('keyup', handleKeyUp);                       // change 'eventType' to the type of event you want to handle
 
   ////////////////////////////////////////////////////////////////////////////////
   ///////////////////////// CORE LOGIC ///////////////////////////////////////////
@@ -54,18 +55,20 @@ function runProgram(){
   // Press down key -> accelerate in the positive Y direction //
   // And so on for left (-x) and right (x) //
 
-  if (event.which === KEY.LEFT) {
-    speedX = -5;
+  changeSpeedX(-5, event.which, KEY.LEFT);
+  changeSpeedX(5, event.which, KEY.RIGHT);
+  changeSpeedY(-5, event.which, KEY.UP);
+  changeSpeedY(5, event.which, KEY.DOWN);
+
   }
-  if (event.which === KEY.UP) {
-     speedY = -5;
-  }
-  if (event.which === KEY.RIGHT) {
-    speedX = 5; 
-  }
-  if (event.which === KEY.DOWN) {
-    speedY = 5;
-  }
+
+
+  function handleKeyUp(event) {
+  
+  changeSpeedX(0, event.which, KEY.LEFT);
+  changeSpeedX(0, event.which, KEY.RIGHT);
+  changeSpeedY(0, event.which, KEY.UP);
+  changeSpeedY(0, event.which, KEY.DOWN);
 
   }
 
@@ -80,6 +83,18 @@ function runProgram(){
 
      positionY += speedY;
      $('#gameItem').css("top", positionY);
+  }
+
+  function changeSpeedX(newSpeed, keycode, arrowKey) {
+    if (keycode === arrowKey) {
+    speedX = newSpeed;
+  }
+  }
+
+  function changeSpeedY(newSpeed, keycode, arrowKey) {
+   if (keycode === arrowKey) {
+     speedY = newSpeed;
+  }
   }
 
   
