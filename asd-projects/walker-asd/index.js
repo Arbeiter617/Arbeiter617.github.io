@@ -15,7 +15,7 @@ function runProgram(){
   var  KEY = {
       "LEFT": 37,
       "UP": 38,
-      "Right": 39,
+      "RIGHT": 39,
       "DOWN": 40,
   }
 
