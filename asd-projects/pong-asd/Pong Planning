@@ -1,0 +1,64 @@
+    **Pong Planning**
+
+    1. Describe the gameplay:
+    Game play will be simple. Every time a player hits the ball, it will give them a power up (only if it not on a serve (also this only MIGHT happen))
+    These power ups can be used however they tell you to use them (some will give you an extra life, etc.)
+    Every time a player misses the ball, it give the other player a point. The first player to get 11 points wins! 
+
+    2. What are the conditions when the game begins?;
+    The board will be set up as follows. Both paddles will be in the bottom corner of the screen (opposite from each other).
+    The score for each player is 0. 
+    The ball will be in the middle of the board, idling. Once a player hits the ball (the players will try to get to it first), the ball will start to bounce from side to side.
+    Once a point is dealt, the ball and paddles will reset. 
+
+
+    3. Does the game have an end? If so, what are the conditions for when it ends?;
+    Once game is won, game will reset an winner get a prize of some sort (^^).
+    
+
+
+    4. What ifs will there be?;
+    If the score a player is 11, the player will be announced winner and the game will reset
+    If the ball hits a players paddle, the ball will bounce off
+    If the ball hits the left side of the arena, the ball will bounce off to the right
+    If the ball hits the right side of the arena, the ball will bounce off to the left
+    If the ball hits the top of the arena, the ball will bounce off to the bottom
+    If the ball hits the bottom of the arena, the ball will bounce off to the top
+    If the ball hits the corner of the arena, the ball will bounce off to the opposite corner or side of which it has made contact with.
+    If a player does not respond or move the paddle for over 20 seconds, the game is shut off and reset and no one is winner
+    If a players paddle makes contact with a power up, the power up is collected
+
+    5. What are the visual game components?
+    The power-ups
+    ball
+    board
+    Paddles (x2)
+    Net in the middle
+    scoreboard
+
+    6. What data will you need to manage each game component?
+    The power-ups: positionX, positionY, .css
+    ball: positionX, positionY, speedX, speedY, .css
+    Paddles (x2): positionX, positionY, speedX, speedY, .css
+    Net in the middle: positionX, positionY, .css
+    scoreboard: score, positionX, positionY, .css
+
+    7. What events will occur in this game?;
+    Every time a player hits the ball, it will give them a power up (only if it not on a serve (also this only MIGHT happen))
+    These power ups can be used however they tell you to use them (some will give you an extra life, etc.)
+    Every time a player misses the ball, it give the other player a point. The first player to get 11 points wins! Timer will test for each point and put it up on the baord.
+    Each time the arrow keys (and WASD keys) are pressed, both paddles will move (one for arrows and one for WASD).
+
+
+    8. How do those events affect the data of the program?;
+    Each time the arrow keys are pressed, the pong paddle (either one) will move in which ever direction it was pushed in.
+    Each time the ball collides with the pong paddles, it will bounce off and continue in the other direction.
+
+    9. For each "event", write out the high-level logic of what will happen.;
+    Each time the ball is passed the players paddle, a point will be sent to the board for the opposite player
+    Each time the ball collides with the pong paddles, it will bounce off and continue in the other direction.
+    Each time the arrow keys are pressed, the pong paddle (either one) will move in which ever direction it was pushed in.
+
+
+
+
