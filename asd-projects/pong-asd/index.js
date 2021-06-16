@@ -32,7 +32,7 @@ function runProgram(){
   
 function gameObject(id, speedX, speedY){
   return{
-    'id': id,
+    'id': "#leftPaddle",
     'x': parseFloat($(id).css('left')),
     'y': parseFloat($(id).css('top')),
     'speedX': 0,
@@ -51,9 +51,9 @@ function gameObject(id, speedX, speedY){
 
 
   // Game Item Objects
-var leftpaddle;
-var rightpaddle;
-var ball;
+var leftpaddle = "#leftPaddle";
+var rightpaddle = "#rightPaddle";
+var ball = "#ball";
 
   // one-time setup
  var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
@@ -82,19 +82,11 @@ var ball;
 
    function handleKeyDown(event) {
   
-  changeSpeedY(-5, event.which, KEY.UP);
-  changeSpeedY(5, event.which, KEY.DOWN);
+  leftPaddleY(-5, event.which, KEY.UP);
+  leftPaddleY(5, event.which, KEY.DOWN);
    }
 
-   function handleKeyUp(event) {
   
-  
-  changeSpeedY(0, event.which, KEY.UP);
-  changeSpeedY(0, event.which, KEY.DOWN);
-
-  }
-
-
 
 
 
