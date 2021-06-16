@@ -83,17 +83,22 @@ console.log(leftPaddle);
   /* 
   Called in response to events.
   */
-  function handleEvent(event) {
-      
+  function handleKeyUp(event) {
+      changeSpeedY(5, event.which, KEY.UP);
+      changeSpeedY(-5, event.which, KEY.DOWN);
   }
 
    function handleKeyDown(event) {
   
-  leftPaddleY(-5, event.which, KEY.UP);
-  leftPaddleY(5, event.which, KEY.DOWN);
+  changeSpeedY(-5, event.which, KEY.UP);
+  changeSpeedY(5, event.which, KEY.DOWN);
    }
 
-  
+  function changeSpeedY(newSpeed, keycode, arrowKey) {
+   if (keycode === arrowKey) {
+     gameObject.speedY = newSpeed;
+  }
+  }
 
 
 
@@ -154,8 +159,8 @@ function doCollide(square1, square2) {
 
   function repositionBox() {
 
-     leftPaddleY += speedY;
-     $('#leftPaddle').css("left", leftPaddleY);
+     leftPaddle.speedY += gameObject.speedY;
+     $('#leftPaddle').css("left", leftPaddle);
 
      
   }
@@ -163,11 +168,7 @@ function doCollide(square1, square2) {
   
   }
 
-  function changeSpeedY(newSpeed, keycode, arrowKey) {
-   if (keycode === arrowKey) {
-     speedY = newSpeed;
-  }
-  }
+  
 
   
 //_______________________________________________________________________________________________________________//
