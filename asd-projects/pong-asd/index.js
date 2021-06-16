@@ -32,7 +32,7 @@ function runProgram(){
   
 function gameObject(id){
   return{
-    'id': "#leftPaddle",
+    'id': id,
     'x': parseFloat($(id).css('left')),
     'y': parseFloat($(id).css('top')),
     'speedX': 0,
@@ -52,14 +52,15 @@ function gameObject(id){
 
   // Game Item Objects
 
-  gameObject.id = "#leftPaddle";
-  gameObject.id = "#rightPaddle";
-  gameObject.id = "#ball";
+  
 
 
-var leftpaddle = "#leftPaddle";
-var rightpaddle = "#rightPaddle";
-var ball = "#ball";
+
+var leftpaddle = gameObject("id" = "#leftPaddle");
+var rightpaddle = gameObject("id" = "#rightPaddle");
+var ball = gameObject("id" = "#ball");
+
+console.log(leftPaddle);
 
   // one-time setup
  var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
@@ -153,8 +154,8 @@ function doCollide(square1, square2) {
 
   function repositionBox() {
 
-     positionY += speedY;
-     $('#leftPaddle').css("left", positionY);
+     leftPaddleY += speedY;
+     $('#leftPaddle').css("left", leftPaddleY);
 
      
   }
