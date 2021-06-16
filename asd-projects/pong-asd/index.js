@@ -56,9 +56,9 @@ function gameObject(id){
 
 
 
-var leftpaddle = gameObject("id" = "#leftPaddle");
-var rightpaddle = gameObject("id" = "#rightPaddle");
-var ball = gameObject("id" = "#ball");
+var leftpaddle = gameObject("#leftPaddle");
+var rightpaddle = gameObject("#rightPaddle");
+var ball = gameObject("#ball");
 
 console.log(leftPaddle);
 
