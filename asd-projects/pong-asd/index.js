@@ -60,7 +60,7 @@ var leftpaddle = gameObject("#leftPaddle");
 var rightpaddle = gameObject("#rightPaddle");
 var ball = gameObject("#ball");
 
-console.log(leftPaddle);
+
 
   // one-time setup
  var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
@@ -86,25 +86,21 @@ console.log(leftPaddle);
   function handleKeyUp(event) {
       changeSpeedY(0, event.which, KEY.UP, leftPaddle);
       changeSpeedY(-5, event.which, KEY.DOWN, leftPaddle);
+      changeSpeedY(0, event.which, KEY2.UP, rightpaddle);
+      changeSpeedY(-5, event.which, KEY2.DOWN, rightPaddle);
   }
 
    function handleKeyDown(event) {
   
   changeSpeedY(0, event.which, KEY.UP, leftPaddle);
   changeSpeedY(5, event.which, KEY.DOWN, leftPaddle);
-   }
-
-   function handleKeyUp(event) {
-      changeSpeedY(0, event.which, KEY.UP2, rightpaddle);
-      changeSpeedY(-5, event.which, KEY2.DOWN, rightPaddle);
-  }
-
-   function handleKeyDown(event) {
-  
   changeSpeedY(0, event.which, KEY2.UP, rightPaddle);
   changeSpeedY(5, event.which, KEY2.DOWN, rightPaddle);
    }
 
+  
+
+  
 
 
 
