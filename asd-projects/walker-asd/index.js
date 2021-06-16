@@ -11,7 +11,7 @@ function runProgram(){
   
   var FRAMES_PER_SECOND_INTERVAL = 1000 / 60;
   var BOARD_WIDTH = $('#board').width();
-  var BOARD_HIGHT = $(window).height();
+  var BOARD_HEIGHT = $('#board').height();
   var  KEY = {
       "LEFT": 37,
       "UP": 38,
@@ -95,6 +95,29 @@ function runProgram(){
    if (keycode === arrowKey) {
      speedY = newSpeed;
   }
+  }
+
+
+  function checkForBoarderCollision() {
+      if (positionX > BOARD_WIDTH - $("#gameItem").width()) {
+        positionX = BOARD_WIDTH - $("#gameItem").width();
+
+      
+
+
+      }
+     else if (positionX < 0) {
+          
+     }
+      if (positionY > BOARD_HEIGHT - $("#gameItem").height()) {
+        positionY = BOARD_HEIGHT - $("#gameItem").height();
+
+      }
+      else if (positionY < 0) {
+       positionY = 0;
+     }
+
+
   }
 
   

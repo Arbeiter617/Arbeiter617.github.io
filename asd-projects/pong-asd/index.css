@@ -1,21 +1,54 @@
 
 body {
-  background-color: darkgreen;
+  background-color: darkblue;
 }
 
+
+
 #board {
-  width: 440px;
+  width: 600px;
   height: 440px;
   border: 1px solid white;
   background-color: black;
   position: relative;
 }
 
-#gameItem {
-  background-color: teal;
-  width: 50px;
-  height: 50px;
+
+
+#rightPaddle {
+  border-radius: 25px;
+  background-color: red;
+  width: 20px;
+  height: 80px;
   position: absolute;
+  top: 100px;
+  left: 0px;
+}
+
+
+  #leftPaddle {
+  border-radius: 25px;
+  background-color: blue;
+  width: 20px;
+  height: 80px;
+  position: absolute;
+  top: 100px;
+  left: 550px;
+  }
+
+
+  #ball {
+  border-radius: 10px;
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 60px;
+  left: 35px;
+
+
+
+
 /*   left: 100px; */  /* Uncomment if you want to set a "starting" position */
 /*   top: 100px;  */  /* Uncomment if you want to set a "starting" position */
 }
