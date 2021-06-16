@@ -30,7 +30,7 @@ function runProgram(){
       "DOWN": 83,
   }
   
-function gameObject(id, speedX, speedY){
+function gameObject(id){
   return{
     'id': "#leftPaddle",
     'x': parseFloat($(id).css('left')),
@@ -51,6 +51,12 @@ function gameObject(id, speedX, speedY){
 
 
   // Game Item Objects
+
+  gameObject.id = "#leftPaddle";
+  gameObject.id = "#rightPaddle";
+  gameObject.id = "#ball";
+
+
 var leftpaddle = "#leftPaddle";
 var rightpaddle = "#rightPaddle";
 var ball = "#ball";
@@ -147,17 +153,13 @@ function doCollide(square1, square2) {
 
   function repositionBox() {
 
-     positionX += speedX;
-     $('#rightPaddle').css("left", positionX);
-
      positionY += speedY;
-     $('#rightPaddle').css("top", positionY);
+     $('#leftPaddle').css("left", positionY);
+
+     
   }
 
-  function changeSpeedX(newSpeed, keycode, arrowKey) {
-    if (keycode === arrowKey) {
-    speedX = newSpeed;
-  }
+  
   }
 
   function changeSpeedY(newSpeed, keycode, arrowKey) {
@@ -181,4 +183,4 @@ function doCollide(square1, square2) {
     $(document).off();
   }
   
-}
+
