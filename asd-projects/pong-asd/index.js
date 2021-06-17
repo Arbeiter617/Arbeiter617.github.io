@@ -103,10 +103,10 @@ var ball = gameObject("#ball");
   }
 
   
-function changeBallSpeed(newSpeed, keycode, arrowKey, ball) {
-    if (keycode === arrowKey) {
+function changeBallSpeed(newSpeed, ball) {
+    
         ball.speedY = newSpeed
-}
+
 }
 
   function changeSpeedY(newSpeed, keycode, arrowKey, whichPaddle) {
