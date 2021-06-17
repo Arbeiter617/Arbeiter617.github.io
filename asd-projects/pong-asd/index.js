@@ -39,8 +39,8 @@ function gameObject(id){
     'speedY': 0,
     }
  }
-  
-  
+
+ 
   
   
   
@@ -56,8 +56,8 @@ function gameObject(id){
 
 
 
-var leftpaddle = gameObject("#leftPaddle");
-var rightpaddle = gameObject("#rightPaddle");
+var leftPaddle = gameObject("#leftPaddle");
+var rightPaddle = gameObject("#rightPaddle");
 var ball = gameObject("#ball");
 
 
@@ -85,24 +85,29 @@ var ball = gameObject("#ball");
   */
   function handleKeyUp(event) {
       changeSpeedY(0, event.which, KEY.UP, leftPaddle);
-      changeSpeedY(-5, event.which, KEY.DOWN, leftPaddle);
-      changeSpeedY(0, event.which, KEY2.UP, rightpaddle);
-      changeSpeedY(-5, event.which, KEY2.DOWN, rightPaddle);
+      changeSpeedY(0, event.which, KEY.DOWN, leftPaddle);
+      changeSpeedY(0, event.which, KEY2.UP, rightPaddle);
+      changeSpeedY(0, event.which, KEY2.DOWN, rightPaddle);
   }
 
    function handleKeyDown(event) {
   
-  changeSpeedY(0, event.which, KEY.UP, leftPaddle);
+  changeSpeedY(-5, event.which, KEY.UP, leftPaddle);
   changeSpeedY(5, event.which, KEY.DOWN, leftPaddle);
-  changeSpeedY(0, event.which, KEY2.UP, rightPaddle);
+  changeSpeedY(-5, event.which, KEY2.UP, rightPaddle);
   changeSpeedY(5, event.which, KEY2.DOWN, rightPaddle);
    }
 
-  
+  function moveBall(event) {
+      changeBallSpeed(5, event.which, KEY.UP, ball);
+  }
 
   
-
-
+function changeBallSpeed(newSpeed, keycode, arrowKey, ball) {
+    if (keycode === arrowKey) {
+        ball.speedY = newSpeed
+}
+}
 
   function changeSpeedY(newSpeed, keycode, arrowKey, whichPaddle) {
    if (keycode === arrowKey) {
@@ -171,6 +176,16 @@ function doCollide(square1, square2) {
 //do both for ball and right paddle//
      leftPaddle.y += leftPaddle.speedY;
      $(leftPaddle.id).css("top", leftPaddle.y);
+
+     rightPaddle.y += rightPaddle.speedY;
+     $(rightPaddle.id).css("top", rightPaddle.y);
+
+     ball.y += ball.speedY;
+     $(ball.id).css("top", ball.y);
+
+     ball.x += ball.speedX;
+     $(ball.id).css("left", ball.x);
+
 
      
   }
