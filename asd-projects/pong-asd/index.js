@@ -40,7 +40,15 @@ function gameObject(id){
     }
  }
 
- 
+ function moveBall(id) {
+     return {
+    'id': ball,
+    'x': parseFloat($(ball).css('left')),
+    'y': parseFloat($(ball).css('top')),
+    'speedX': 10,
+    'speedY': 10,
+     }
+ }
   
   
   
@@ -59,6 +67,7 @@ function gameObject(id){
 var leftPaddle = gameObject("#leftPaddle");
 var rightPaddle = gameObject("#rightPaddle");
 var ball = gameObject("#ball");
+var ball = moveBall('#ball');
 
 
 
@@ -75,6 +84,25 @@ var ball = gameObject("#ball");
   On each "tick" of the timer, a new frame is dynamically drawn using JavaScript
   by calling this function and executing the code inside.
   */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
   function newFrame() {
     repositionBox();
 
@@ -98,16 +126,7 @@ var ball = gameObject("#ball");
   changeSpeedY(5, event.which, KEY2.DOWN, rightPaddle);
    }
 
-  function moveBall(event) {
-      changeBallSpeed(5, event.which, KEY.UP, ball);
-  }
-
   
-function changeBallSpeed(newSpeed, ball) {
-    
-        ball.speedY = newSpeed
-
-}
 
   function changeSpeedY(newSpeed, keycode, arrowKey, whichPaddle) {
    if (keycode === arrowKey) {
@@ -166,12 +185,6 @@ function doCollide(square1, square2) {
 
 
 
-
-
-
-
-
-
   function repositionBox() {
 //do both for ball and right paddle//
      leftPaddle.y += leftPaddle.speedY;
@@ -185,13 +198,9 @@ function doCollide(square1, square2) {
 
      ball.x += ball.speedX;
      $(ball.id).css("left", ball.x);
+      }
 
-
-     
-  }
-
-  
-  }
+   }
 
   
 
