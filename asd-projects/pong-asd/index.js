@@ -40,6 +40,12 @@ function gameObject(id){
     }
  }
 
+var p1Points = 0;
+var p2Points = 0;
+
+
+
+
 
   var positionX2 = 280;
   var positionY2 = 200;
@@ -151,11 +157,24 @@ function newBallFrame() {
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
- 
 
 
+  function Points() {
 
+      p2Points++;
+      p1Points++;
 
+      if(ball.x < BOARD_WIDTH) {
+         document.getElementById("p1").innerHTML = p1Points;
+
+      }
+      else if (ball.x > BOARD_WIDTH) {
+          document.getElementById("p1").innerHTML = p2Points;
+          
+      }
+  }
+
+Points();
 
 
 
