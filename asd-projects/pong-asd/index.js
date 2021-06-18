@@ -120,7 +120,8 @@ function newBallFrame() {
   
   function newFrame() {
     repositionBox();
-
+         doCollide(ball, leftPaddle);
+         doCollide(ball, rightPaddle);
   }
   
   /* 
@@ -158,7 +159,7 @@ function newBallFrame() {
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
 
-
+//test
   function Points() {
 
       p2Points++;
@@ -194,15 +195,7 @@ Points();
     
  
   
-  
 
-    // TODO: Return true if they are overlapping, false otherwise
-	
-	// Hint: use the following conditions:
-    // red left < blue right
-    // red right > blue left
-    // red top < blue bottom
-    // red bottom > blue top
    
    if ((ball.rightX > leftPaddle.leftX) && 
       (ball.leftX < leftPaddle.rightX) &&
@@ -220,6 +213,38 @@ Points();
 
 }
 
+ function doCollide(ball, rightPaddle) {
+    
+    ball.leftX = ball.x;
+    ball.topY = ball.y;
+    ball.rightX = ball.x + ball.width;
+    ball.bottomY = ball.y + ball.height;
+  
+    rightPaddle.leftX = rightPaddle.x;
+    rightPaddle.topY = rightPaddle.y;
+    rightPaddle.rightX = rightPaddle.x + ball.width;
+    rightPaddle.bottomY = rightPaddle.y + ball.height;
+  
+    
+ 
+  
+
+   
+   if ((ball.rightX > rightPaddle.leftX) && 
+      (ball.leftX < rightPaddle.rightX) &&
+      (ball.bottomY > rightPaddle.topY) &&
+      (ball.topY < rightPaddle.bottomY)) {
+    speedX2 = -1;
+   }
+  
+    else {
+    
+  }
+
+  
+  
+
+}
 
 
   function repositionBox() {
