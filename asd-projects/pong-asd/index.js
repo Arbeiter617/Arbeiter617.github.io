@@ -40,18 +40,19 @@ function gameObject(id){
     }
  }
 
- function moveBall(id) {
-     return {
-    'id': ball,
-    'x': parseFloat($(ball).css('left')),
-    'y': parseFloat($(ball).css('top')),
-    'speedX': 10,
-    'speedY': 10,
-     }
- }
+
+  var positionX2 = 280;
+  var positionY2 = 200;
+  var speedX2 = 1;
+  var speedY2 = 0;
   
-  
-  
+    var ball = {};
+    ball.id = '#ball';
+    ball.x = 280;
+    ball.y = 200;
+    ball.width = 20;
+    ball.height = 20;
+
 
 
  
@@ -67,12 +68,12 @@ function gameObject(id){
 var leftPaddle = gameObject("#leftPaddle");
 var rightPaddle = gameObject("#rightPaddle");
 var ball = gameObject("#ball");
-var ball = moveBall('#ball');
 
 
 
   // one-time setup
- var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
+var interval = setInterval(newBallFrame, FRAMES_PER_SECOND_INTERVAL);
+  var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
   $(document).on('keydown', handleKeyDown); 
   $(document).on('keyup', handleKeyUp);                              // change 'eventType' to the type of event you want to handle
 
@@ -86,6 +87,14 @@ var ball = moveBall('#ball');
   */
 
 
+  
+
+function newBallFrame() {
+    // Update position of game item //
+    repositionBall();
+    // Check for collisons //
+
+  }
 
 
 
@@ -142,17 +151,26 @@ var ball = moveBall('#ball');
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
-function doCollide(square1, square2) {
+ 
+
+
+
+
+
+
+
+
+  function doCollide(ball, leftPaddle) {
     
-    square1.leftX = square1.x;
-    square1.topY = square1.y;
-    square1.rightX = square1.x + square1.width;
-    square1.bottomY = square1.y + square1.height;
+    ball.leftX = ball.x;
+    ball.topY = ball.y;
+    ball.rightX = ball.x + ball.width;
+    ball.bottomY = ball.y + ball.height;
   
-    square2.leftX = square2.x;
-    square2.topY = square2.y;
-    square2.rightX = square2.x + square1.width;
-    square2.bottomY = square2.y + square1.height;
+    leftPaddle.leftX = leftPaddle.x;
+    leftPaddle.topY = leftPaddle.y;
+    leftPaddle.rightX = leftPaddle.x + ball.width;
+    leftPaddle.bottomY = leftPaddle.y + ball.height;
   
     
  
@@ -167,15 +185,15 @@ function doCollide(square1, square2) {
     // red top < blue bottom
     // red bottom > blue top
    
-   if ((square1.rightX > square2.leftX) && 
-      (square1.leftX < square2.rightX) &&
-      (square1.bottomY > square2.topY) &&
-      (square1.topY < square2.bottomY)) {
-     return true;
+   if ((ball.rightX > leftPaddle.leftX) && 
+      (ball.leftX < leftPaddle.rightX) &&
+      (ball.bottomY > leftPaddle.topY) &&
+      (ball.topY < leftPaddle.bottomY)) {
+    speedX2 = -1;
    }
   
     else {
-    return false;
+    
   }
 
   
@@ -193,17 +211,31 @@ function doCollide(square1, square2) {
      rightPaddle.y += rightPaddle.speedY;
      $(rightPaddle.id).css("top", rightPaddle.y);
 
-     ball.y += ball.speedY;
-     $(ball.id).css("top", ball.y);
-
-     ball.x += ball.speedX;
-     $(ball.id).css("left", ball.x);
-      }
-
    }
 
-  
+  function repositionBall() {
 
+    positionX2 += speedX2;
+     $('#ball').css("left", positionX2);
+
+     positionY2 += speedY2;
+     $('#ball').css("top", positionY2);
+   
+  }
+
+  function changeSpeedX2(newSpeed) {
+    
+    speedX2 = newSpeed;
+  
+  }
+
+  function changeSpeedY2(newSpeed) {
+   speedY2 = newSpeed;
+  
+  }
+
+
+}
   
 //_______________________________________________________________________________________________________________//
 
