@@ -17,7 +17,7 @@ function runProgram(){
   var FRAMES_PER_SECOND_INTERVAL = 1000 / 60;
 
   var BOARD_WIDTH = $('#board').width();
-  var BOARD_HIGHT = $(window).height();
+  var BOARD_HIGHT = $('#board').height();
   var  KEY = {
       
       "UP": 38,
@@ -82,6 +82,24 @@ var interval = setInterval(newBallFrame, FRAMES_PER_SECOND_INTERVAL);
   On each "tick" of the timer, a new frame is dynamically drawn using JavaScript
   by calling this function and executing the code inside.
   */
+      p2Points++;
+      p1Points++;
+
+      if(ball.x >= BOARD_WIDTH) {
+         document.getElementById("p1").innerHTML = p1Points;
+
+      }
+      else if (ball.x === 0) {
+          document.getElementById("p1").innerHTML = p2Points;
+          
+      }
+
+
+
+
+
+
+
 const imageArray = [
   "https://images.unsplash.com/photo-1508185159346-bb1c5e93ebb4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=55cf14db6ed80a0410e229368963e9d8&auto=format&fit=crop&w=1900&q=80",
   "https://images.unsplash.com/photo-1495480393121-409eb65c7fbe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=05ea43dbe96aba57d48b792c93752068&auto=format&fit=crop&w=1351&q=80",
@@ -148,6 +166,8 @@ function newBallFrame() {
     repositionBox();
          doCollide(ball, leftPaddle);
          doCollide(ball, rightPaddle);
+         doCollideWithWall(ball, BOARD_HIGHT);
+         
   }
   
   /* 
@@ -186,22 +206,16 @@ function newBallFrame() {
   ////////////////////////////////////////////////////////////////////////////////
 
 //test
-  function Points() {
+ 
 
-      p2Points++;
-      p1Points++;
+     
+  
 
-      if(ball.x < BOARD_WIDTH) {
-         document.getElementById("p1").innerHTML = p1Points;
 
-      }
-      else if (ball.x > BOARD_WIDTH) {
-          document.getElementById("p1").innerHTML = p2Points;
-          
-      }
-  }
 
-Points();
+
+
+
 
 
 
@@ -228,7 +242,9 @@ Points();
       (ball.bottomY > leftPaddle.topY) &&
       (ball.topY < leftPaddle.bottomY)) {
        ball.speedX = -ball.speedX;
+       ball.speedY = -ball.speedY;
         ball.speedX--;
+        ball.speedY--;
     
    }
   
@@ -236,15 +252,35 @@ Points();
       (ball.leftX < rightPaddle.rightX) &&
       (ball.bottomY > rightPaddle.topY) &&
       (ball.topY < rightPaddle.bottomY)) {
-     ball.speedX = ball.speedX;
-     ball.speedX--;
+     ball.speedX = ball.speedX++;
+     ball.speedY = ball.speedY++;
+     ball.speedX++;
+     ball.speedY++;
   }
 
   
   
 
 }
+function doCollideWithWall(ball, BOARD_HIGHT) {
+   ball.leftX = ball.x;
+    ball.topY = ball.y;
+    ball.rightX = ball.x + ball.width;
+    ball.bottomY = ball.y + ball.height;
+  
 
+
+
+
+ if (ball.y >= BOARD_HIGHT) {
+    ball.speedX = -ball.speedX;
+ }
+if (ball.y <= 0) {
+  ball.speedY = ball.speedY++;
+
+ }
+
+}
  
 
   
