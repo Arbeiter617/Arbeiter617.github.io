@@ -79,7 +79,29 @@ body {
   top: 200px;
 
   }
+ html, body {
+  margin: 0;
+  height: 30%;
+  width: 100%;
+}
+
+header {
+  width: 20%;
  
+  flex-direction: column;
+}
+
+img {
+  width: 10%;
+  position: relative;
+  top: 10px;
+}
+
+#flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 
 
