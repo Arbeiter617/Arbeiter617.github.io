@@ -195,8 +195,11 @@ Points();
        ball.speedX = -ball.speedX;
    }
   
-    else {
-     
+    else if ((ball.rightX > rightPaddle.leftX) && 
+      (ball.leftX < rightPaddle.rightX) &&
+      (ball.bottomY > rightPaddle.topY) &&
+      (ball.topY < rightPaddle.bottomY)) {
+     ball.speedX = ball.speedX;
   }
 
   
