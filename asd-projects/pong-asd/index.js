@@ -82,19 +82,24 @@ var interval = setInterval(newBallFrame, FRAMES_PER_SECOND_INTERVAL);
   On each "tick" of the timer, a new frame is dynamically drawn using JavaScript
   by calling this function and executing the code inside.
   */
-      p2Points++;
-      p1Points++;
 
-      if(ball.x >= BOARD_WIDTH) {
+
+  function points(ball, BOARD_WIDTH) {
+      
+      
+
+      if(ball.x === BOARD_WIDTH) {
+          p1Points++;
          document.getElementById("p1").innerHTML = p1Points;
-
+             
       }
       else if (ball.x === 0) {
-          document.getElementById("p1").innerHTML = p2Points;
+          p2Points++;
+          document.getElementById("p2").innerHTML = p2Points;
           
       }
 
-
+    }
 
 
 
@@ -167,6 +172,8 @@ function newBallFrame() {
          doCollide(ball, leftPaddle);
          doCollide(ball, rightPaddle);
          doCollideWithWall(ball, BOARD_HIGHT);
+         points(ball, BOARD_WIDTH)
+         
          
   }
   
