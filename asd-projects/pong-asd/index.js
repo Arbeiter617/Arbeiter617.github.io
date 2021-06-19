@@ -35,7 +35,9 @@ function gameObject(id){
     'id': id,
     'x': parseFloat($(id).css('left')),
     'y': parseFloat($(id).css('top')),
-    'speedX': 0,
+    'width': $(id).width(),
+    'height': $(id).height(),
+    'speedX': 1,
     'speedY': 0,
     }
  }
@@ -47,18 +49,7 @@ var p2Points = 0;
 
 
 
-  var positionX2 = 280;
-  var positionY2 = 200;
-  var speedX2 = 1;
-  var speedY2 = 0;
   
-    var ball = {};
-    ball.id = '#ball';
-    ball.x = 280;
-    ball.y = 200;
-    ball.width = 20;
-    ball.height = 20;
-
 
 
  
@@ -201,11 +192,11 @@ Points();
       (ball.leftX < leftPaddle.rightX) &&
       (ball.bottomY > leftPaddle.topY) &&
       (ball.topY < leftPaddle.bottomY)) {
-    speedX2 = -1;
+       ball.speedX = -ball.speedX;
    }
   
     else {
-    
+     
   }
 
   
@@ -213,38 +204,12 @@ Points();
 
 }
 
- function doCollide(ball, rightPaddle) {
-    
-    ball.leftX = ball.x;
-    ball.topY = ball.y;
-    ball.rightX = ball.x + ball.width;
-    ball.bottomY = ball.y + ball.height;
-  
-    rightPaddle.leftX = rightPaddle.x;
-    rightPaddle.topY = rightPaddle.y;
-    rightPaddle.rightX = rightPaddle.x + ball.width;
-    rightPaddle.bottomY = rightPaddle.y + ball.height;
-  
-    
  
-  
-
-   
-   if ((ball.rightX > rightPaddle.leftX) && 
-      (ball.leftX < rightPaddle.rightX) &&
-      (ball.bottomY > rightPaddle.topY) &&
-      (ball.topY < rightPaddle.bottomY)) {
-    speedX2 = -1;
-   }
-  
-    else {
-    
-  }
 
   
   
 
-}
+
 
 
   function repositionBox() {
@@ -259,22 +224,22 @@ Points();
 
   function repositionBall() {
 
-    positionX2 += speedX2;
-     $('#ball').css("left", positionX2);
+    ball.x += ball.speedX;
+     $('#ball').css("left", ball.x);
 
-     positionY2 += speedY2;
-     $('#ball').css("top", positionY2);
+     ball.y += ball.speedY;
+     $('#ball').css("top", ball.y);
    
   }
 
   function changeSpeedX2(newSpeed) {
     
-    speedX2 = newSpeed;
+    ball.speedX = newSpeed;
   
   }
 
   function changeSpeedY2(newSpeed) {
-   speedY2 = newSpeed;
+   ball.speedY = newSpeed;
   
   }
 
