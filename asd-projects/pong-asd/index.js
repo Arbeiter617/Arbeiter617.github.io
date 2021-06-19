@@ -228,7 +228,7 @@ Points();
       (ball.bottomY > leftPaddle.topY) &&
       (ball.topY < leftPaddle.bottomY)) {
        ball.speedX = -ball.speedX;
-     
+        ball.speedX--;
     
    }
   
@@ -236,7 +236,8 @@ Points();
       (ball.leftX < rightPaddle.rightX) &&
       (ball.bottomY > rightPaddle.topY) &&
       (ball.topY < rightPaddle.bottomY)) {
-     ball.speedX = +ball.speedX;
+     ball.speedX = ball.speedX;
+     ball.speedX--;
   }
 
   
