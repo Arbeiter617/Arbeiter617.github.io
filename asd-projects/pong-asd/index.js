@@ -47,21 +47,6 @@ var p2Points = 0;
 
 
 
-var text1 = [
-  "Point for player 1! Work harder player 2!",
-  "Point for player 1! Are you sad player 2?",
-  "Point for player 1! You have a long way to go player 2!",
-  "Point for player 1! Go run laps player 2!",
-  "Point for player1! It does not look good for you player 2!",
-];
-
-var text2 = [
-  "Point for player 2! Work harder player 1!",
-  "Point for player 2! Are you sad player 1?",
-  "Point for player 2! You have a long way to go player 1!",
-  "Point for player 2! Go run laps player 1!",
-  "Point for player 2! It does not look good for you player 1!",
-];
 
   
 
@@ -183,10 +168,16 @@ function newBallFrame() {
   }
 
 
-var play = (prompt("Would you like to play the game?", ""));
 
 
-if (play == 'yes') {
+
+
+var play3 = (prompt("Would you like to play the game?", ""));
+var play = (prompt("What is your name Player 1?", ""));
+var play1 = (prompt("What is your name Player 2?", ""));
+
+
+if (play3 == 'yes') {
   alert("Enjoy! Game made by Arbiter627!");
         ball.x = 280;
         ball.y = 200;
@@ -198,6 +189,21 @@ if (play == 'yes') {
    
 }
 
+var text1 = [
+  "Point for " + play + "! Work harder " + play1 + "!",
+  "Point for " + play +"! Are you sad " + play1 + "?",
+ "Point for " + play +"! You have a long way to go " + play1 + "!",
+ "Point for " + play +"! Go run laps " + play1 + "!",
+  "Point for " + play +"! It does not look good for you " + play1 + "!",
+];
+
+var text2 = [
+  "Point for " + play + "! Work harder " + play1 + "!",
+  "Point for " + play +"! Are you sad " + play1 + "?",
+ "Point for " + play +"! You have a long way to go " + play1 + "!",
+ "Point for " + play +"! Go run laps " + play1 + "!",
+  "Point for " + play +"! It does not look good for you " + play1 + "!",
+];
 
 
 
