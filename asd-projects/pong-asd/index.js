@@ -92,12 +92,12 @@ var interval = setInterval(newBallFrame, FRAMES_PER_SECOND_INTERVAL);
 
       if(ball.x >= 600) {
           p1Points++;
-         document.getElementById("p1").innerHTML = p1Points;
+         document.getElementById("p2").innerHTML = p1Points;
          ball.x = 280;
          ball.y = 200;
          ball.speedY = 0;
          ball.speedX = 1;
-          var text4 = text2[Math.floor(Math.random() * text2.length)];
+          var text4 = text1[Math.floor(Math.random() * text1.length)];
         alert(text4);
     }
           
@@ -105,12 +105,12 @@ var interval = setInterval(newBallFrame, FRAMES_PER_SECOND_INTERVAL);
              
       else if (ball.x <= 0) {
           p2Points++;
-          document.getElementById("p2").innerHTML = p2Points;
+          document.getElementById("p1").innerHTML = p2Points;
           ball.x = 280;
           ball.y = 200;
           ball.speedY = 0;
           ball.speedX = 1;
-          var text3 = text1[Math.floor(Math.random() * text1.length)];
+          var text3 = text2[Math.floor(Math.random() * text2.length)];
           alert(text3);
     }                
           
@@ -198,11 +198,11 @@ var text1 = [
 ];
 
 var text2 = [
-  "Point for " + play + "! Work harder " + play1 + "!",
-  "Point for " + play +"! Are you sad " + play1 + "?",
- "Point for " + play +"! You have a long way to go " + play1 + "!",
- "Point for " + play +"! Go run laps " + play1 + "!",
-  "Point for " + play +"! It does not look good for you " + play1 + "!",
+  "Point for " + play1 + "! Work harder " + play + "!",
+  "Point for " + play1 +"! Are you sad " + play + "?",
+ "Point for " + play1 +"! You have a long way to go " + play + "!",
+ "Point for " + play1 +"! Go run laps " + play + "!",
+  "Point for " + play1 +"! It does not look good for you " + play + "!",
 ];
 
 

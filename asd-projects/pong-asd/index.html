@@ -40,13 +40,13 @@ h1 {
        <div id="leftPaddle"> </div>
        <div class="score-board">
   <div class="player">
-    <h4>Player 1</h4>
+    <h4 id="player">Player 1</h4>
     <div class="score-box">
       <div id="p2">0</div>
     </div>
   </div>
-  <div class="player">
-    <h4>Player 2</h4>
+  <div class="player2">
+    <h4 id="player2">Player 2</h4>
     <div class="score-box">
     <div id="p1">0</div>
     </div>
@@ -54,5 +54,14 @@ h1 {
 </div>
     </div>
      <h1 style="color:yellow;">Welcome to the PONG Game!</h1>
+
+     <script>
+        
+         var play = (prompt("What is your name Player 1?", ""));
+         var play1 = (prompt("What is your name Player 2?", ""));
+         
+         document.getElementById("player").innerHTML = play;
+         document.getElementById("player2").innerHTML = play1;
+     </script>
   </body>
 </html>
