@@ -46,8 +46,8 @@ var p1Points = 0;
 var p2Points = 0;
 
 
-
-
+var Addnew=false;
+var Addnew1=true;
   
 
   
@@ -65,6 +65,7 @@ var ball = gameObject("#ball");
 
 
 
+
   // one-time setup
 var interval = setInterval(newBallFrame, FRAMES_PER_SECOND_INTERVAL);
   var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
@@ -79,7 +80,56 @@ var interval = setInterval(newBallFrame, FRAMES_PER_SECOND_INTERVAL);
   On each "tick" of the timer, a new frame is dynamically drawn using JavaScript
   by calling this function and executing the code inside.
   */
- 
+ function endScore2(p1Points, p2Points) {
+    
+     if(p1Points > 9) {
+       p1Points = 0;
+       p2Points = 0;
+       document.getElementById("p1").innerHTML = p2Points;
+       document.getElementById("p2").innerHTML = p1Points;
+
+      Addnew1=true;
+        var prizeGen = prize[Math.floor(Math.random() * prize.length)];
+    
+      alert("The game is over! The winner is " + play + " and the loser is " + play1 + "! Congrats " + play + " you earned a " + prizeGen + "!");
+     }   
+      
+     
+     
+      
+      
+    
+       else if(p2Points > 9) {
+       p1Points = 0;
+       p2Points = 0;
+       document.getElementById("p1").innerHTML = p2Points;
+       document.getElementById("p2").innerHTML = p1Points;
+
+      Addnew1=true;
+        var prizeGen = prize[Math.floor(Math.random() * prize.length)];
+    
+      alert("The game is over! The winner is " + play1 + " and the loser is " + play + "! Congrats " + play1 + " you earned a " + prizeGen + "!");
+       
+
+      
+    }
+        
+}
+
+var prize = [
+    "pizza",
+    "toe",
+    "Cheese slice",
+    "new car",
+    "thicc cookie",
+    "nothing",
+];
+
+
+
+
+
+
 
 
   
@@ -88,10 +138,10 @@ var interval = setInterval(newBallFrame, FRAMES_PER_SECOND_INTERVAL);
 
   function points(ball, BOARD_WIDTH) {
       
-      
-
+     
       if(ball.x >= 600) {
-          p1Points++;
+        p1Points++;
+
          document.getElementById("p2").innerHTML = p1Points;
          ball.x = 280;
          ball.y = 200;
@@ -178,11 +228,13 @@ var play1 = (prompt("What is your name Player 2?", ""));
 
 
 if (play3 == 'yes') {
-  alert("Enjoy! Game made by Arbiter627!");
+  alert("Enjoy! Game made by Arbeiter627!");
         ball.x = 280;
         ball.y = 200;
         ball.speedY = 0;
         ball.speedX = 1;
+
+    
 
 } else {
   alert("Ok.");
@@ -222,7 +274,10 @@ var text2 = [
          doCollide(ball, leftPaddle);
          doCollide(ball, rightPaddle);
          doCollide(ball, BOARD_HIGHT);
-         points(ball, BOARD_WIDTH)
+         points(ball, BOARD_WIDTH);
+         endScore();
+         endScore2(p1Points, p2Points)
+         
          
          
   }
@@ -243,6 +298,8 @@ var text2 = [
   changeSpeedY(5, event.which, KEY.DOWN, leftPaddle);
   changeSpeedY(-5, event.which, KEY2.UP, rightPaddle);
   changeSpeedY(5, event.which, KEY2.DOWN, rightPaddle);
+  
+  
    }
 
   
@@ -264,6 +321,33 @@ var text2 = [
 
 //test
  
+function endScore() {
+    if(p1Points === 9 && Addnew1 === true) {
+        Addnew=true;
+        Addnew1=false
+    }
+       if(Addnew === true) {
+        alert("The Game Is Almost Up! Are you ready to lose " + play1 + "? Also, speed is now amplified!");
+        ball.speedX = 3;
+        Addnew=false;
+               
+       } 
+      
+       
+    
+    if(p2Points === 9 && Addnew1 === true) {
+        Addnew=true;
+        Addnew1=false;
+    }
+       if(Addnew === true) {
+         alert("The game is almost over! Are you ready to lose " + play + "? Also, speed is now amplified!");
+         ball.speedX = 3;
+            Addnew=false;
+        }
+    
+
+   
+}  
 
 
  
@@ -349,8 +433,8 @@ var text2 = [
    
  }
 
- 
-  
+
+
   
 
 }
