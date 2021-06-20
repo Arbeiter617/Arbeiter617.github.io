@@ -37,7 +37,7 @@ function gameObject(id){
     'y': parseFloat($(id).css('top')),
     'width': $(id).width(),
     'height': $(id).height(),
-    'speedX': 1,
+    'speedX': 0,
     'speedY': 0,
     }
  }
@@ -47,13 +47,25 @@ var p2Points = 0;
 
 
 
+var text1 = [
+  "Point for player 1! Work harder player 2!",
+  "Point for player 1! Are you sad player 2?",
+  "Point for player 1! You have a long way to go player 2!",
+  "Point for player 1! Go run laps player 2!",
+  "Point for player1! It does not look good for you player 2!",
+];
 
+var text2 = [
+  "Point for player 2! Work harder player 1!",
+  "Point for player 2! Are you sad player 1?",
+  "Point for player 2! You have a long way to go player 1!",
+  "Point for player 2! Go run laps player 1!",
+  "Point for player 2! It does not look good for you player 1!",
+];
 
   
 
-
- 
-
+  
 
 
   // Game Item Objects
@@ -82,22 +94,41 @@ var interval = setInterval(newBallFrame, FRAMES_PER_SECOND_INTERVAL);
   On each "tick" of the timer, a new frame is dynamically drawn using JavaScript
   by calling this function and executing the code inside.
   */
+ 
+
+
+  
+
 
 
   function points(ball, BOARD_WIDTH) {
       
       
 
-      if(ball.x === BOARD_WIDTH) {
+      if(ball.x >= 600) {
           p1Points++;
          document.getElementById("p1").innerHTML = p1Points;
+         ball.x = 280;
+         ball.y = 200;
+         ball.speedY = 0;
+         ball.speedX = 1;
+          var text4 = text2[Math.floor(Math.random() * text2.length)];
+        alert(text4);
+    }
+          
+        
              
-      }
-      else if (ball.x === 0) {
+      else if (ball.x <= 0) {
           p2Points++;
           document.getElementById("p2").innerHTML = p2Points;
+          ball.x = 280;
+          ball.y = 200;
+          ball.speedY = 0;
+          ball.speedX = 1;
+          var text3 = text1[Math.floor(Math.random() * text1.length)];
+          alert(text3);
+    }                
           
-      }
 
     }
 
@@ -152,7 +183,20 @@ function newBallFrame() {
   }
 
 
+var play = (prompt("Would you like to play the game?", ""));
 
+
+if (play == 'yes') {
+  alert("Enjoy! Game made by Arbiter627!");
+        ball.x = 280;
+        ball.y = 200;
+        ball.speedY = 0;
+        ball.speedX = 1;
+
+} else {
+  alert("Ok.");
+   
+}
 
 
 
@@ -171,7 +215,7 @@ function newBallFrame() {
     repositionBox();
          doCollide(ball, leftPaddle);
          doCollide(ball, rightPaddle);
-         doCollideWithWall(ball, BOARD_HIGHT);
+         doCollide(ball, BOARD_HIGHT);
          points(ball, BOARD_WIDTH)
          
          
@@ -215,8 +259,8 @@ function newBallFrame() {
 //test
  
 
-     
-  
+
+ 
 
 
 
@@ -264,30 +308,57 @@ function newBallFrame() {
      ball.speedX++;
      ball.speedY++;
   }
+    if (ball.y === -10) {
+     ball.speedY = ball.speedY + 1;
+   
+ }
+ 
 
+ if (ball.y === BOARD_HIGHT) {
+     ball.speedY = ball.speedY - 1;
+   
+ }
+  
+  if (leftPaddle.y === -10) {
+      leftPaddle.y = 0;
+     
+   
+ }
+ 
+
+ if (leftPaddle.y === 360) {
+    leftPaddle.y = 350;
+   
+ }
+
+ if (rightPaddle.y === -10) {
+      rightPaddle.y = 0;
+     
+   
+ }
+ 
+
+ if (rightPaddle.y === 360) {
+    rightPaddle.y = 350;
+   
+ }
+
+ 
   
   
 
 }
-function doCollideWithWall(ball, BOARD_HIGHT) {
-   ball.leftX = ball.x;
-    ball.topY = ball.y;
-    ball.rightX = ball.x + ball.width;
-    ball.bottomY = ball.y + ball.height;
+
+ 
   
 
 
 
 
- if (ball.y >= BOARD_HIGHT) {
-    ball.speedX = -ball.speedX;
- }
-if (ball.y <= 0) {
-  ball.speedY = ball.speedY++;
+ 
 
- }
 
-}
+
  
 
   
