@@ -18,17 +18,7 @@ applyFilter();
 
 // TODO 1 & 3: Create the applyFilter function here
 
-function applyFilter(filterFunction, reddify) {
-
-    
-}
-
-
-
-// TODO 5: Create the applyFilterNoBackground function
-
-
-// TODO 2 & 4: Create filter functions
+function applyFilter(filterFunction) {
 for (var r = 0; r < image.length; r++) {
     for (var c = 0; c < image[r].length; c++) {
         var rgbString = image[r][c];
@@ -39,7 +29,7 @@ for (var r = 0; r < image.length; r++) {
         var rgbNumbers = rgbStringToArray(rgbString);
         
 
-         rgbNumbers[RED] = 255;
+        filterFunction(rgbNumbers);
           
          var rgbString = rgbArrayToString(rgbNumbers);
 
@@ -48,7 +38,17 @@ for (var r = 0; r < image.length; r++) {
          
     }
 }
-function reddify() {
+    
+}
+
+
+
+// TODO 5: Create the applyFilterNoBackground function
+
+
+// TODO 2 & 4: Create filter functions
+
+function reddify(rgbNumbers) {
       rgbNumbers[RED] = 255;
 }
 
