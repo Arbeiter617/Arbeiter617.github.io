@@ -29,16 +29,16 @@ function applyFilter() {
 // TODO 2 & 4: Create filter functions
 for (var r = 0; r < image.length; r++) {
     for (var c = 0; c < image[r].length; c++) {
-        var rgbString = image[0];
+        var rgbString = image[r][c];
  
         var rgbNumbers = rgbStringToArray(rgbString);
-         rgbStringToArray(rgbString);
+        
 
          rgbNumbers[RED] = 255;
           
-         var rgbString = rgbNumbers.toString();
+         var rgbStringToArray = rgbNumbers;
 
-         rgbString = image[0];
+         image[r][c] = rgbString;
 
          
     }
