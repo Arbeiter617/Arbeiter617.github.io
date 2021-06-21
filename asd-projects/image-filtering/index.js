@@ -4,7 +4,7 @@ $(document).ready(function(){
     const $display = $('#display');
 
     // TODO: Call your apply function(s) here
-
+applyFilter();
 
 
 
@@ -18,11 +18,32 @@ $(document).ready(function(){
 
 // TODO 1 & 3: Create the applyFilter function here
 
+function applyFilter() {
+
+}
+
 
 // TODO 5: Create the applyFilterNoBackground function
 
 
 // TODO 2 & 4: Create filter functions
+for (var r = 0; r < image.length; r++) {
+    for (var c = 0; c < image[r].length; c++) {
+        var rgbString = image[0];
+ 
+        var rgbNumbers = rgbStringToArray(rgbString);
+         rgbStringToArray(rgbString);
+
+         rgbNumbers[RED] = 255;
+          
+         var rgbString = rgbNumbers.toString();
+
+         rgbString = image[0];
+
+         
+    }
+}
+
 
 
 // CHALLENGE code goes below here

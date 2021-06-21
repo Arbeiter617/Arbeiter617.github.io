@@ -19,7 +19,9 @@ Use higher order functions to apply filters to images.
 
 <img src="img/before.png"> ==> <img src="img/after.png">
 
-In this project you will be building a simple program that applies filters to images. You will also be creating multiple filters!
+In this project you will be 
+
+ building a simple program that applies filters to images. You will also be creating multiple filters!
 
 ## Learning Objectives
 - Practice working with multidimensional arrays
