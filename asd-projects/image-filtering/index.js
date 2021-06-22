@@ -8,6 +8,10 @@ $(document).ready(function(){
     // TODO: Call your apply function(s) here
 applyFilterNoBackground(reddify);
 
+applyFilterNoBackground(decreaseBlue);
+
+applyFilter(increaseGreenByBlue);
+
 
 
 
@@ -81,11 +85,11 @@ function reddify(rgbNumbers) {
 }
 
 function decreaseBlue(rgbNumbers) {
-rgbNumbers[BLUE] = Math.max(-30, 0);
+rgbNumbers[BLUE] = Math.max(rgbNumber[BLUE] - 30, 0);
 
 }
 function increaseGreenByBlue(rgbNumbers) {
-    rgbNumbers[GREEN] = Math.min(BrgbNumbers[GREEN] + rgbNumbers[BLUE], 255);
+    rgbNumbers[GREEN] = Math.min(rgbNumbers[GREEN] + rgbNumbers[BLUE], 255);
 }
 
 
