@@ -6,7 +6,7 @@ $(document).ready(function(){
   
 
     // TODO: Call your apply function(s) here
-applyFilterNoBackground(decreaseBlue);
+applyFilterNoBackground(reddify);
 
 
 
@@ -49,13 +49,13 @@ for (var r = 0; r < image.length; r++) {
 
 
 
-function applyFilterNoBackground() {
+function applyFilterNoBackground(filterFunction) {
     for (var r = 0; r < image.length; r++) {
     for (var c = 0; c < image[r].length; c++) {
         var rgbString = image[r][c];
  
 
-       if(rgbStringToArray === rgbArrayToString) {
+       if(rgbString !== image[0][0]) {
 
         var rgbNumbers = rgbStringToArray(rgbString);
         
@@ -81,11 +81,11 @@ function reddify(rgbNumbers) {
 }
 
 function decreaseBlue(rgbNumbers) {
-rgbNumbers[BLUE] = Math.max(0, -30);
+rgbNumbers[BLUE] = Math.max(-30, 0);
 
 }
 function increaseGreenByBlue(rgbNumbers) {
-    rgbNumbers[GREEN] = Math.min(BLUE + GREEN);
+    rgbNumbers[GREEN] = Math.min(BrgbNumbers[GREEN] + rgbNumbers[BLUE], 255);
 }
 
 
