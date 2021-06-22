@@ -85,7 +85,7 @@ function reddify(rgbNumbers) {
 }
 
 function decreaseBlue(rgbNumbers) {
-rgbNumbers[BLUE] = Math.max(rgbNumber[BLUE] - 30, 0);
+rgbNumbers[BLUE] = Math.max(rgbNumbers[BLUE] - 30, 0);
 
 }
 function increaseGreenByBlue(rgbNumbers) {
