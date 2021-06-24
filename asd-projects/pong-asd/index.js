@@ -398,13 +398,13 @@ function endScore() {
      ball.speedX++;
      ball.speedY++;
   }
-    if (ball.y === -10) {
+    if (ball.y < -10) {
      ball.speedY = ball.speedY + 1;
    
  }
  
 
- if (ball.y === BOARD_HIGHT) {
+ if (ball.y > BOARD_HIGHT) {
      ball.speedY = ball.speedY - 1;
    
  }
