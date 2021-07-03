@@ -24,6 +24,24 @@ The CSS ids you will work with are:
 
 // TODO 1: Implement swap
 
+function swap(array, i, j) {
+    var sorted = false;
+  
+  while (!sorted) {
+    sorted = true;
+    for(var i = 0; i <= array.length - 2; i++) {
+      if(array[i] > array[i + 1]) {
+        swap(i, i+1, array);
+        
+            sorted = false;
+      }
+      
+    }
+  }
+  
+  
+}
+
 
 ///////////////////////////////////////////////////////////////////////
 /////////////////////// YOUR WORK GOES ABOVE HERE /////////////////////
