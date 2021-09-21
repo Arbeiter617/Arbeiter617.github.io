@@ -42,8 +42,10 @@ _.identity = function(value) {
 var arr = [10, 20, 30, 40];
 var index = _.indexOf(arr, 20);
 
-if([1, 2, 3].includes(2);) {
-
+if(arr.includes(20)) {
+    return true;
+} else {
+    return false;
 }
 
 
