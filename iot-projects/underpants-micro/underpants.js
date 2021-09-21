@@ -21,7 +21,9 @@ var _ = {};
 *   _.identity({a: "b"}) === {a: "b"}
 */
 
-
+_.identity = function(value) {
+    return value;
+}
 
 /** _.indexOf
 * Arguments:
@@ -37,6 +39,13 @@ var _ = {};
 *   _.indexOf(["a","b","c"], "c") -> 2
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
+var arr = [10, 20, 30, 40];
+var index = _.indexOf(arr, 20);
+
+if([1, 2, 3].includes(2);) {
+
+}
+
 
 
 
