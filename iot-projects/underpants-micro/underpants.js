@@ -39,16 +39,26 @@ _.identity = function(value) {
 *   _.indexOf(["a","b","c"], "c") -> 2
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
-var arr = [10, 20, 30, 40];
-var index = _.indexOf(arr, 20);
 
-if(arr.includes(20)) {
-    return true;
-} else {
-    return false;
+_.indexOf = function (arr, arrValue) {
+
+    for (var index = 0; index < arr.length; index++) {
+        var value = arr[index];
+            
+        
+        
+        if(value === arrValue) {
+        return index;
+       } 
+ }
+
+ if(value !== arrValue) {
+    return -1;
+   }
+
+    
+  
 }
-
-
 
 
 /** _.contains
@@ -65,6 +75,23 @@ if(arr.includes(20)) {
 *   _.contains([1,"two", 3.14], "two") -> true
 */
 
+_.contains = function (arr, value) {
+    for (var index = 0; index < arr.length; index++) {
+        var number = arr[index];
+            
+        
+        
+        if(number === value) {
+          return true;
+       } 
+   }
+
+   if(number !== value) {
+    return false;
+ } 
+}
+
+
 
 
 /** _.each
@@ -79,6 +106,38 @@ if(arr.includes(20)) {
 *   _.each(["a","b","c"], function(e,i,a){ console.log(e)});
 *      -> should log "a" "b" "c" to the console
 */
+
+
+
+
+
+_.each = function (arr2, eachTest) {      
+    if(Array.isArray(arr2)) {
+
+
+        for (var index2 = 0; index2 < arr2.length; index2++) {
+            eachTest(arr2[index], index, arr2);
+        }
+
+
+       
+    } 
+    
+    
+}
+
+
+
+
+function eachTest(arr2[index], index, arr2) {
+  return arr2;
+  
+}
+
+
+
+
+
 
 
 
