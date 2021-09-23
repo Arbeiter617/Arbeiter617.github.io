@@ -116,7 +116,8 @@ _.each = function (arr2, eachTest) {
 
 
         for (var index2 = 0; index2 < arr2.length; index2++) {
-            eachTest(arr2[index], index, arr2);
+            var variable = arr2[index2];
+            eachTest(variable, index2, arr2);
         }
 
 
@@ -129,7 +130,7 @@ _.each = function (arr2, eachTest) {
 
 
 
-function eachTest(arr2[index], index, arr2) {
+function eachTest(variable, index2, arr2) {
   return arr2;
   
 }
@@ -158,6 +159,45 @@ function eachTest(arr2[index], index, arr2) {
 */
 
 
+_.filter = function (arr2, testFunc) {
+
+    var newArr = [];
+    for (var index2 = 0; index2 < arr2.length; index2++) {
+        var variable = arr2[index2];
+        testFunc(variable, index2, arr2);
+
+        var yes = testFunc(variable, index2, arr2);
+
+        if(yes) {
+            newArr.push(variable);
+        } 
+        
+        
+    }
+
+
+  return newArr;
+
+}
+
+
+
+
+function testFunc(variable, index2, arr2) {
+	return variable % 2 === 0;
+    
+
+    
+}
+
+
+
+
+
+
+
+
+
 
 /** _.reject
 * Arguments:
@@ -171,6 +211,39 @@ function eachTest(arr2[index], index, arr2) {
 * Examples:
 *   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
 */
+
+_.reject = function (arr2, testFunc) {
+    var newArr = [];
+    for (var index2 = 0; index2 < arr2.length; index2++) {
+        var variable = arr2[index2];
+        testFunc(variable, index2, arr2);
+
+        var yes = testFunc(variable, index2, arr2);
+
+        if(!yes) {
+            newArr.push(variable);
+        } 
+        
+        
+    }
+
+
+  return newArr;
+
+}
+
+
+
+
+function testFunc(variable, index2, arr2) {
+	return variable % 2 === 0;
+    
+
+    
+}
+
+
+
 
 
 
@@ -187,6 +260,43 @@ function eachTest(arr2[index], index, arr2) {
 * Examples:
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
+
+_.map = function (arr2, eachTest) {   
+    var newArr = [];   
+    if(Array.isArray(arr2)) {
+      
+
+        for (var index2 = 0; index2 < arr2.length; index2++) {
+            var variable = arr2[index2];
+            var arrayStuff = eachTest(variable, index2, arr2);
+
+           
+            newArr.push(arrayStuff);
+            
+
+           
+        }
+
+        return newArr;
+       
+    } 
+    
+    
+}
+
+
+
+
+function eachTest(variable, index2, arr2) {
+  return arr2;
+  
+}
+
+
+
+
+
+
 
 
 
