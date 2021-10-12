@@ -109,9 +109,9 @@
               
                 $("#reg-highest").text("Highest recorded value is " + regHighest);
                 
-            } else if (value < regHighest) {
+            } else if (value < regLowest) {
                 regLowest = value;
-                    $("#reg-Lowest").text("Highest recorded value is " + regLowest);
+                    $("#reg-Lowest").text("Lowest recorded value is " + regLowest);
             }
    
   
@@ -123,9 +123,9 @@
             if(value > wsHighest) {
               wsHighest = value;
               $("#ws-Highest").text("Highest recorded value is " + wsHighest);
-            } else if (value < wsHighest) {
+            } else if (value < wasLowest) {
               wasLowest = value;
-              $("#was-Lowest").text("Highest recorded value is " + wasLowest);
+              $("#was-Lowest").text("Lowest recorded value is " + wasLowest);
             }
         }
 
