@@ -106,10 +106,12 @@
             // Update the regular polling records
             if (value > regHighest) {
               regHighest = value;
-              $('#reg-chart-container').append($("<p>").attr("id", "reg-highest").text("Highest recorded value is " + regHighest));
+              
+                $("#reg-highest").text("Highest recorded value is " + regHighest);
+                
             } else if (value < regHighest) {
                 regLowest = value;
-                $('#reg-chart-container').append($("<p>").attr("id", "reg-lowest").text("Highest recorded value is " + regLowest));
+                    $("#reg-Lowest").text("Highest recorded value is " + regLowest);
             }
    
   
@@ -120,10 +122,10 @@
             // Update the WebSocket polling records
             if(value > wsHighest) {
               wsHighest = value;
-              $('#ws-chart-container').append($("<p>").attr("id", "ws-highest").text("Highest recorded value is " + wsHighest));
+              $("#ws-Highest").text("Highest recorded value is " + wsHighest);
             } else if (value < wsHighest) {
               wasLowest = value;
-              $('#ws-chart-container').append($("<p>").attr("id", "ws-lowest").text("Highest recorded value is " + wasLowest));
+              $("#was-Lowest").text("Highest recorded value is " + wasLowest);
             }
         }
 
