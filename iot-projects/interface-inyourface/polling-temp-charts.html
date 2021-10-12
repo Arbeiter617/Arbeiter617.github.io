@@ -131,7 +131,7 @@
 
         function doPoll() {
              //ask my instructor for propper URL//
-            $.getJSON("https://http://0348-2600-1700-a40-7370-00-26.ngrok.io", function (result) {
+            $.getJSON("http://0348-2600-1700-a40-7370-00-26.ngrok.io", function (result) {
                 
                 addDataPoint(result, regData, regChart);
 
@@ -147,13 +147,18 @@
 
         // TODO 4: WebSocket Polling
         // Create a new WebSocket connection here
+        var socket = new WebSocket('ws://0348-2600-1700-a40-7370-00-26.ngrok.io');
 
         socket.onmessage = function (event) {
             // Fill in the body of the onmessage function
+            var result = JSON.parse(event.data);
+            addDataPoint(result, wsData, wsChart);
+            updateWSRecords(value);
         };
 
         socket.onerror = function (error) {
             // Fill in the body of the onerror function
+            console.log(error);
         };
 
 
