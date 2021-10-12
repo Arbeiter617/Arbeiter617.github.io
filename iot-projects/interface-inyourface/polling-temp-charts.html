@@ -34,9 +34,15 @@
     ///////////////////////////////////////////////////////////
     ////////////////// JAVASCRIPT BEGINS HERE /////////////////
     ///////////////////////////////////////////////////////////
+
+
+
+
     $(document).ready(function () {
         // Chart initialization code 
         var maxDataPoints = 10;
+
+       
         
         // Setup to use charts
         google.charts.load('current', {'packages':['corechart']});
@@ -80,20 +86,61 @@
         }
 
         // TODO 1: Initialize high and low records
+      
+        var regHighest= -500;
+        var regLowest = 500;
+        var wsHighest = -500;
+        var wasLowest = 500;
+         
+        $('#reg-chart-container').append($("<p>").attr("id", "reg-highest").text("Highest recorded value is " + regHighest));
+        $('#reg-chart-container').append($("<p>").attr("id", "reg-lowest").text("Highest recorded value is " + regLowest));
+        $('#ws-chart-container').append($("<p>").attr("id", "ws-highest").text("Highest recorded value is " + wsHighest));
+        $('#ws-chart-container').append($("<p>").attr("id", "ws-lowest").text("Highest recorded value is " + wasLowest));
+
+
+
+
 
         // TODO 2: Update high and low records
         function updateRegRecords(value){
             // Update the regular polling records
+            if (value > regHighest) {
+              regHighest = value;
+              $('#reg-chart-container').append($("<p>").attr("id", "reg-highest").text("Highest recorded value is " + regHighest));
+            } else if (value < regHighest) {
+                regLowest = value;
+                $('#reg-chart-container').append($("<p>").attr("id", "reg-lowest").text("Highest recorded value is " + regLowest));
+            }
+   
+  
+
         }
 
         function updateWSRecords(value){
             // Update the WebSocket polling records
+            if(value > wsHighest) {
+              wsHighest = value;
+              $('#ws-chart-container').append($("<p>").attr("id", "ws-highest").text("Highest recorded value is " + wsHighest));
+            } else if (value < wsHighest) {
+              wasLowest = value;
+              $('#ws-chart-container').append($("<p>").attr("id", "ws-lowest").text("Highest recorded value is " + wasLowest));
+            }
         }
 
         // TODO 3: Regular Polling
 
         function doPoll() {
+             //ask my instructor for propper URL//
+            $.getJSON("https://http://0348-2600-1700-a40-7370-00-26.ngrok.io", function (result) {
+                
+                addDataPoint(result, regData, regChart);
 
+                updateRegRecords(results.value);
+
+                setTimeout(1000);
+            });
+
+            
         }
 
         doPoll();
