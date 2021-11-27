@@ -10,8 +10,9 @@ const express = require('express'),
 	
 var app = express();
 	
-app.use('/pi/sensors', sensorRoutes);
+
 app.use(cors());
+app.use('/pi/sensors', sensorRoutes);
 
 app.get('/', function(req, res){
     res.send('Some response for accessing the root');
@@ -23,7 +24,7 @@ app.get('/pi', function(req, res){
 });
 
 
-
+var sensorRoutes = require('./../routes/sensors');
 
 module.exports = app;
 
