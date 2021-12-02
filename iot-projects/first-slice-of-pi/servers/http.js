@@ -26,6 +26,9 @@ app.get('/pi', function(req, res){
 
 var sensorRoutes = require('./../routes/sensors');
 
+var actuatorRoutes = require('./../routes/actuators');
+app.use('/pi/actuators', actuatorsRoutes);
+
 module.exports = app;
 
 //I read all of the files//
