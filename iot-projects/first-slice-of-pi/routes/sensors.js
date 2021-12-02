@@ -19,7 +19,7 @@ router.route('/dht/humidity').get(function (req, res, next) {
 });
 
 router.route('/pir').get(function (req, res, next) {
-	res.send(resources.pi.sensors.dht.pir);
+	res.send(resources.pi.sensors.pir);
 });
 
 
