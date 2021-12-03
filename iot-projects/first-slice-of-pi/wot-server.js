@@ -7,7 +7,7 @@ const httpServer = require('./servers/http'),
 var pirPlugin = require('./plugins/internal/pirPlugin');
 pirPlugin.start({});
 
-var pirPlugin = require('./plugins/internal/dhtPlugin');
+var dhtPlugin = require('./plugins/internal/dhtPlugin');
 dhtPlugin.start({});
 
 

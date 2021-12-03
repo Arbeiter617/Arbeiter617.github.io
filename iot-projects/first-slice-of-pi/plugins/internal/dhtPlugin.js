@@ -19,6 +19,7 @@ function connectHardware() {
       device.temperature.value = parseFloat(newVar.temperature);
        device.humidity.value = parseFloat(newVar.humidity);
     }
+        }
     
     sensor.initialize();
     sensor.read();
@@ -30,7 +31,7 @@ function connectHardware() {
  
      
     
-}
+
 
 
 
