@@ -15,7 +15,7 @@ function connectHardware() {
     let newVar;
      newVar = sensorDriver.read();
      
-     device.sensor.value = parseFloat(newVar.sensor);
+    
       device.temperature.value = parseFloat(newVar.temperature);
        device.humidity.value = parseFloat(newVar.humidity);
     }
