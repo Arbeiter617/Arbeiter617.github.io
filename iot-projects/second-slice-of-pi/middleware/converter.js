@@ -7,7 +7,7 @@ module.exports = function() {
 	return function (req, res, next) {
 		// TODO 2: Create the converter function
 		if (req.result) {
-		res.send(req.result);
+		
 		if (req.accepts('html')){
 		
 	let transform = {'<>': 'div', 'html': [
@@ -32,7 +32,9 @@ module.exports = function() {
 		   json2html.transform(json2html.result, transform.result);
 		   
 		   return;
+		   
 		}
+		res.send(req.result);
 		}
 		else {
 		next();
