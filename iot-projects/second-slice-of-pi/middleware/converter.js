@@ -28,8 +28,8 @@ module.exports = function() {
 	
 
 		
-		   res.send();
-		   json2html.transform(json2html.result, transform.result);
+		   
+		   res.send(json2html.transform(req.result, transform));
 		   
 		   return;
 		   
