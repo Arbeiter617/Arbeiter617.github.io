@@ -23,10 +23,5 @@ router.route('/leds/:id').get(function (req, res, next) {
 next();
 });
 
-router.route('/leds/:id').get(function (req, res, next) {
-	
-	req.result = resources.pi.actuators.leds[req.params.id];
-next();
-});
 
 module.exports = router;
