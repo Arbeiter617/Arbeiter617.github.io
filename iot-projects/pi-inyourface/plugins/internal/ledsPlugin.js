@@ -17,10 +17,47 @@ exports.start = function (params) {
 };
 
 // TODO 1: Complete the ledsPlugin!
-actuator1 = new Gpio(leds[1].gpio, 'out');
-actuator2 = new Gpio(leds[2].gpio, 'out');
 
- function stop() {
- LEDGpioConnection.write(leds[1]);
- LEDGpioConnection.write(leds[2])
+function connectHardware() {
+
+actuator1 = new Gpio(model[1].gpio, 'out');
+actuator2 = new Gpio(model[2].gpio, 'out');
+
+}
+
+
+ exports.stop = function (params) {
+ actuator1.write(0);
+ actuator2.write(0);
+ 
+ actuator1.unexport();
+ actuator2.unexport();
  }
+
+exports.switchOnOff = {
+    1: function (value) {
+    
+    if(value === true) {
+    actuator1.write(1);
+    
+    } else {
+    actuator1.write(0);
+    }
+      
+ 
+    },
+    2: function (value) {
+      if(value === true) {
+    actuator2.write(1);
+    
+    } else {
+    actuator2.write(0);
+    }
+ 
+    }
+}
+
+
+
+
+
