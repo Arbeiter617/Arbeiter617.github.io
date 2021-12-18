@@ -1,12 +1,11 @@
 const express = require('express'),
 	router = express.Router(),
 	resources = require('./../resources/model');
-ledsPlugin = require('./plugins/internal/ledsPlugin');
-
-router.route('/leds/:id').get(...).put(...);
+var ledsPlugin = require('./../plugins/internal/ledsPlugin');
 
 
-value = req.body.value;
+
+
 router.route('/').get(function (req, res, next) {
 
 req.result = resources.pi.actuators;
@@ -16,9 +15,7 @@ next();
 router.route('/leds').get(function (req, res, next) {
 	
 	req.result = resources.pi.actuators.leds;
-	value = req.body.value;
-	leds = req.result;
-	ledsPlugin.switchOnOff[req.params.id](req.body.value);
+	
 next();
 });
 
