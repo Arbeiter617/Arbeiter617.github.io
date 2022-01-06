@@ -10,7 +10,7 @@ exports.listen = function (server) {
 	console.log("WebSocket server started");
 	wss.on('connection', function (ws, req) {
 		// TODO 3: Construct a callback for handling client subscription requests
-		 copiedURL = req.url;
+		 url = req.url;
 		 
 		 if(selectResource(url) === undefined) {
 		   console.log("ERROR");
