@@ -3,7 +3,7 @@ var WebSocketServer = require('ws').Server,
 	utils = require('./../utils/utils');
 
 var refreshRate = 10;
-var copiedURL;
+var url;
 
 exports.listen = function (server) {
 	var wss = new WebSocketServer({server: server});
