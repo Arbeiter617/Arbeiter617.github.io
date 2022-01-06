@@ -13,10 +13,13 @@ dhtPlugin.start({});
 var ledsPlugin = require('./plugins/internal/ledsPlugin');
 ledsPlugin.start();
 ledsPlugin.stop();
+var websocketServer = require("./servers/websockets");
+
 
 
 const server = httpServer.listen(resources.pi.port, function () {
 	console.log("Running the Pi on port " + resources.pi.port);
+	<websocketServer>.listen(server);
 });
 
 process.on('SIGINT', function() {

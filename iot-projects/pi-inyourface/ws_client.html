@@ -63,6 +63,21 @@
 
 		function connect(url, updateElement) {
 			// TODO 4: Create new WebSocket client connections
+			var socket = new WebSocket(url);
+			socket.onopen = function (event) {
+                                 console.log("OPENED CONNECTION");
+                                $(updateElement).html("<h4>" + result.value + "</h4>" );
+                        }
+                       
+			socket.onmessage = function (event) {
+                                let result = JSON.parse(event.data);
+                                $(updateElement).html(result.value);
+                               
+                        }
+                        
+                        socket.onerror = function (error) {
+                               $(updateElement).html("<h4>Error!<h4>");
+                        }
 			
 		}
 	});

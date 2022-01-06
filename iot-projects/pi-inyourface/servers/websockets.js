@@ -3,12 +3,23 @@ var WebSocketServer = require('ws').Server,
 	utils = require('./../utils/utils');
 
 var refreshRate = 10;
+var copiedURL;
 
 exports.listen = function (server) {
 	var wss = new WebSocketServer({server: server});
 	console.log("WebSocket server started");
 	wss.on('connection', function (ws, req) {
 		// TODO 3: Construct a callback for handling client subscription requests
+		 copiedURL = req.url;
+		 
+		 if(selectResource(url) === undefined) {
+		   console.log("ERROR");
+		   return;
+		 }
+		 
+		utils.monitor(selectResource(url), refreshRate, function callbackFunction(changes) {ws.send(JSON.stringify(changes));})
+		
+		
 		
 	});
 };
