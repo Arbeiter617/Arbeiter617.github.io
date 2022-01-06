@@ -19,7 +19,7 @@ var websocketServer = require("./servers/websockets");
 
 const server = httpServer.listen(resources.pi.port, function () {
 	console.log("Running the Pi on port " + resources.pi.port);
-	<websocketServer>.listen(server);
+	websocketServer.listen(server);
 });
 
 process.on('SIGINT', function() {
