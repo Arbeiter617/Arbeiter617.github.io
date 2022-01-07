@@ -1,33 +1,15 @@
 const express = require('express'),
 	router = express.Router(),
-	resources = require('./../resources/model');
-var ledsPlugin = require('./../plugins/internal/ledsPlugin');
+	resources = require('./../resources/model'),
+	ledsPlugin = require('./../plugins/internal/ledsPlugin');
 
 
-
-
-router.route('/').get(function (req, res, next) {
-
-req.result = resources.pi.actuators;
-next();
-});
-
-router.route('/leds').get(function (req, res, next) {
-	
-	req.result = resources.pi.actuators.leds;
-	
-next();
-});
-
-router.route('/leds/:id').get(function (req, res, next) {
-	
-	req.result = resources.pi.actuators.leds[req.params.id];
-	value = req.body.value;
-	leds = req.result;
+router.route('/leds/:id').put(function(req, res, next) {
+	var selectedLed = resources.pi.actuators.leds[req.params.id];
+	selectedLed.value = req.body.value;
+	req.result = selectedLed;
 	ledsPlugin.switchOnOff[req.params.id](req.body.value);
-	
-next();
+	next();
 });
-
 
 module.exports = router;
