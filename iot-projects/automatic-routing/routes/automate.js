@@ -12,12 +12,12 @@ function createRouter(deviceObject) {
 console.log("Is it working?");
     newVariable = express.Router()   
 
-function generateRoute(newVariable, deviceObject);
+generateRoute(newVariable, deviceObject);
 
 return newVariable;
 }
 
-generateRoute(router, resource) {
+function generateRoute(router, resource) {
  
  for (var key in resource) {
  var value = resource[key];
