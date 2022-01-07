@@ -30,13 +30,13 @@ app.use(cors());
 app.use('/pi/actuators', actuatorRoutes);
 
 //app.get('/', function(req, res){
-    res.send('Some response for accessing the root');
-});
+//    res.send('Some response for accessing the root');
+//});
 
 
 //app.get('/pi', function(req, res){
-    res.send('192.168.1.103:8484/pi');
-});
+    //res.send('192.168.1.103:8484/pi');
+//});
 app.use('/', createRouter(resources));
 app.use(converter());
 
