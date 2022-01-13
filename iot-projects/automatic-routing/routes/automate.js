@@ -22,7 +22,8 @@ function generateRoute(router, resource) {
  for (var key in resource) {
  var value = resource[key];
     if (typeof value === "object"){
-    // do something with the object
+    generateRoute(router, value);
+    
 }
 }
  
