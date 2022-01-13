@@ -29,7 +29,11 @@ module.exports = function() {
 
 		
 		   
-		   res.send(json2html.transform(req.result, transform));
+		      console.log("sending html");
+                      let response = json2html.transform(req.result, transform);
+                      let links = generateLinks(req.links);
+
+                      res.send(response + links);
 		   
 		   return;
 		   
@@ -42,3 +46,16 @@ module.exports = function() {
 		
 	};
 };
+
+
+
+function generateLinks(linkList) {
+        var html = "<h4>Links</h4>";
+         
+         for (var key in linkList) {
+          html.innerHtml =  "<a href="+linkList[link]+">"+link+"</a><br>";
+          
+          return html;
+}
+
+}
