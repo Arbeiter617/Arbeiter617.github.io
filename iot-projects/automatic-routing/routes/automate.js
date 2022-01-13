@@ -32,9 +32,9 @@ function generateRoute(router, resource) {
  if (resource.link){
    router.route(resource.link).get(function (req, res, next){
    
-   var links = {
+   var links = populateLinks(resource);
 
-        }
+        
     res.links(links);
     req.links = links;
    req.result = resource;
@@ -44,6 +44,28 @@ function generateRoute(router, resource) {
 }
 
  
+ }
+ 
+ function populateLinks(resource) {
+   linkObject = {
+   
+   
+   };
+   for (var key in resource) {
+ var value2 = resource[key];
+    if (typeof value2 === "object"){
+    var subResource = value2;
+    
+     if (subResource.link){
+ linkObject[subResource.name]; 
+}
+}
+}
+
+   
+   
+   
+   return linkObject;
  }
  
  
