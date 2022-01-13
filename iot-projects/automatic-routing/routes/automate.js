@@ -57,7 +57,7 @@ function generateRoute(router, resource) {
     var subResource = value2;
     
      if (subResource.link){
- linkObject[subResource.name]; 
+ linkObject[subResource.name] = subResource.link;
 }
 }
 }
