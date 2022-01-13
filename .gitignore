@@ -1,1 +1,4 @@
 workspace.code-workspace
+
+iot-projects/*/node_modules
+iot-projects/*/package-lock.json
