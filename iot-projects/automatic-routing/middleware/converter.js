@@ -53,7 +53,7 @@ function generateLinks(linkList) {
         var html = "<h4>Links</h4>";
          
          for (var key in linkList) {
-          html.innerHtml =  "<a href="+linkList[link]+">"+link+"</a><br>";
+          html.innerHtml =  "<a href="+linkList[key]+">"+key+"</a><br>";
           
           return html;
 }
