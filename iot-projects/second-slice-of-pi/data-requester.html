@@ -53,8 +53,7 @@
 		function processForm(e) {
 			// TODO 5: Test Web Page's XMLHttpRequest Client
 			const url = $('#host').val();
-			
-			 xhttp.open();
+				           
 			 
 			const xhttp = new XMLHttpRequest()
 			
@@ -64,7 +63,7 @@
 			
 			xttp.send();
 			
-			xhttp.onreadystatechange() = function() {
+			xhttp.onreadystatechange = function() {
 			  if(this.readyState === 4) {
 			     if(this.status === 200) {
 			     $('#data').html(this.responseText);
