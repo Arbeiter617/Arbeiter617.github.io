@@ -1,0 +1,768 @@
+body {
+    background-color: black;
+}
+
+#car {
+    background-color: blue;
+    position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 18px;
+      height: 18px;
+}
+
+
+
+#roadPiece1 {
+    background-color: brown;
+    position: absolute;
+    top: 10px;
+    left: 180px;
+    width: 40px;
+    height: 40px;
+}
+
+
+
+#roadPiece3 {
+    background-color: brown;
+    position: absolute;
+    top: 10px;
+    left: 220px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece4 {
+    background-color: brown;
+    position: absolute;
+    top: 10px;
+    left: 260px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece5 {
+    background-color: brown;
+    position: absolute;
+    top: 10px;
+    left: 300px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece6 {
+    background-color: brown;
+    position: absolute;
+    top: 10px;
+    left: 340px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece7 {
+    background-color: brown;
+    position: absolute;
+    top: 10px;
+    left: 380px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece8 {
+    background-color: brown;
+    position: absolute;
+    top: 10px;
+    left: 420px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece9 {
+    background-color: brown;
+    position: absolute;
+    top: 10px;
+    left: 460px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece10 {
+    background-color: brown;
+    position: absolute;
+    top: 10px;
+    left: 500px;
+    width: 40px;
+    height: 40px;
+}
+
+
+#roadPiece12 {
+    background-color: brown;
+    position: absolute;
+    top: 50px;
+    left: 180px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece13 {
+    background-color: brown;
+    position: absolute;
+    top: 50px;
+    left: 220px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece14 {
+    background-color: brown;
+    position: absolute;
+    top: 50px;
+    left: 260px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece15 {
+    background-color: brown;
+    position: absolute;
+    top: 50px;
+    left: 300px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece16 {
+    background-color: brown;
+    position: absolute;
+    top: 50px;
+    left: 340px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece17 {
+    background-color: brown;
+    position: absolute;
+    top: 50px;
+    left: 380px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece18 {
+    background-color: brown;
+    position: absolute;
+    top: 50px;
+    left: 420px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece19 {
+    background-color: brown;
+    position: absolute;
+    top: 50px;
+    left: 460px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece20 {
+    background-color: brown;
+    position: absolute;
+    top: 50px;
+    left: 500px;
+    width: 40px;
+    height: 40px;
+}
+
+
+
+
+#roadPiece21 {
+    background-color: brown;
+    position: absolute;
+    top: 90px;
+    left: 180px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece22 {
+    background-color: brown;
+    position: absolute;
+    top: 90px;
+    left: 220px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece23 {
+    background-color: brown;
+    position: absolute;
+    top: 90px;
+    left: 260px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece24 {
+    background-color: brown;
+    position: absolute;
+    top: 90px;
+    left: 300px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece25 {
+    background-color: brown;
+    position: absolute;
+    top: 90px;
+    left: 340px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece26 {
+    background-color: brown;
+    position: absolute;
+    top: 90px;
+    left: 380px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece27 {
+    background-color: brown;
+    position: absolute;
+    top: 90px;
+    left: 420px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece28 {
+    background-color: brown;
+    position: absolute;
+    top: 90px;
+    left: 460px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece29 {
+    background-color: brown;
+    position: absolute;
+    top: 90px;
+    left: 500px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece30 {
+    background-color: brown;
+    position: absolute;
+    top: 130px;
+    left: 180px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece31 {
+    background-color: brown;
+    position: absolute;
+    top: 130px;
+    left: 220px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece32 {
+    background-color: brown;
+    position: absolute;
+    top: 130px;
+    left: 260px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece33 {
+    background-color: brown;
+    position: absolute;
+    top: 130px;
+    left: 300px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece34 {
+    background-color: brown;
+    position: absolute;
+    top: 130px;
+    left: 340px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece35 {
+    background-color: brown;
+    position: absolute;
+    top: 130px;
+    left: 380px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece36 {
+    background-color: brown;
+    position: absolute;
+    top: 130px;
+    left: 420px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece37 {
+    background-color: brown;
+    position: absolute;
+    top: 130px;
+    left: 460px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece38 {
+    background-color: brown;
+    position: absolute;
+    top: 130px;
+    left: 500px;
+    width: 40px;
+    height: 40px;
+}
+
+
+
+#roadPiece39 {
+    background-color: brown;
+    position: absolute;
+    top: 170px;
+    left: 180px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece40 {
+    background-color: brown;
+    position: absolute;
+    top: 170px;
+    left: 220px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece41 {
+    background-color: brown;
+    position: absolute;
+    top: 170px;
+    left: 260px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece42 {
+    background-color: brown;
+    position: absolute;
+    top: 170px;
+    left: 300px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece43 {
+    background-color: brown;
+    position: absolute;
+    top: 170px;
+    left: 340px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece44 {
+    background-color: brown;
+    position: absolute;
+    top: 170px;
+    left: 380px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece45 {
+    background-color: brown;
+    position: absolute;
+    top: 170px;
+    left: 420px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece46 {
+    background-color: brown;
+    position: absolute;
+    top: 170px;
+    left: 460px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece47 {
+    background-color: brown;
+    position: absolute;
+    top: 170px;
+    left: 500px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece48 {
+    background-color: brown;
+    position: absolute;
+    top: 210px;
+    left: 180px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece49 {
+    background-color: brown;
+    position: absolute;
+    top: 210px;
+    left: 220px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece50 {
+    background-color: brown;
+    position: absolute;
+    top: 210px;
+    left: 260px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece51 {
+    background-color: brown;
+    position: absolute;
+    top: 210px;
+    left: 300px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece52 {
+    background-color: brown;
+    position: absolute;
+    top: 210px;
+    left: 340px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece53 {
+    background-color: brown;
+    position: absolute;
+    top: 210px;
+    left: 380px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece54 {
+    background-color: brown;
+    position: absolute;
+    top: 210px;
+    left: 420px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece55 {
+    background-color: brown;
+    position: absolute;
+    top: 210px;
+    left: 460px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece56 {
+    background-color: brown;
+    position: absolute;
+    top: 210px;
+    left: 500px;
+    width: 40px;
+    height: 40px;
+}
+
+
+#roadPiece57 {
+    background-color: brown;
+    position: absolute;
+    top: 250px;
+    left: 180px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece58 {
+    background-color: brown;
+    position: absolute;
+    top: 250px;
+    left: 220px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece59 {
+    background-color: brown;
+    position: absolute;
+    top: 250px;
+    left: 260px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece60 {
+    background-color: brown;
+    position: absolute;
+    top: 250px;
+    left: 300px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece61 {
+    background-color: brown;
+    position: absolute;
+    top: 250px;
+    left: 340px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece62 {
+    background-color: brown;
+    position: absolute;
+    top: 250px;
+    left: 380px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece63 {
+    background-color: brown;
+    position: absolute;
+    top: 250px;
+    left: 420px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece64 {
+    background-color: brown;
+    position: absolute;
+    top: 250px;
+    left: 460px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece65 {
+    background-color: brown;
+    position: absolute;
+    top: 250px;
+    left: 500px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece66 {
+    background-color: brown;
+    position: absolute;
+    top: 290px;
+    left: 180px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece67 {
+    background-color: brown;
+    position: absolute;
+    top: 290px;
+    left: 220px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece68 {
+    background-color: brown;
+    position: absolute;
+    top: 290px;
+    left: 260px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece69 {
+    background-color: brown;
+    position: absolute;
+    top: 290px;
+    left: 300px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece70 {
+    background-color: brown;
+    position: absolute;
+    top: 290px;
+    left: 340px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece71 {
+    background-color: brown;
+    position: absolute;
+    top: 290px;
+    left: 380px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece72 {
+    background-color: brown;
+    position: absolute;
+    top: 290px;
+    left: 420px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece73 {
+    background-color: brown;
+    position: absolute;
+    top: 290px;
+    left: 460px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece74 {
+    background-color: brown;
+    position: absolute;
+    top: 290px;
+    left: 500px;
+    width: 40px;
+    height: 40px;
+}
+
+
+#roadPiece75 {
+    background-color: brown;
+    position: absolute;
+    top: 330px;
+    left: 180px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece76 {
+    background-color: brown;
+    position: absolute;
+    top: 330px;
+    left: 220px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece77 {
+    background-color: brown;
+    position: absolute;
+    top: 330px;
+    left: 260px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece78 {
+    background-color: brown;
+    position: absolute;
+    top: 330px;
+    left: 300px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece79 {
+    background-color: brown;
+    position: absolute;
+    top: 330px;
+    left: 340px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece80 {
+    background-color: brown;
+    position: absolute;
+    top: 330px;
+    left: 380px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece81 {
+    background-color: brown;
+    position: absolute;
+    top: 330px;
+    left: 420px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece82 {
+    background-color: brown;
+    position: absolute;
+    top: 330px;
+    left: 460px;
+    width: 40px;
+    height: 40px;
+}
+
+#roadPiece83 {
+    background-color: brown;
+    position: absolute;
+    top: 330px;
+    left: 500px;
+    width: 40px;
+    height: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

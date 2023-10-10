@@ -1,0 +1,175 @@
+body {
+    background-color: #696969;
+    
+  }
+  
+   #board {
+      position: relative;
+      margin: auto;
+      width: 800px;
+      height: 600px;
+      border: 10px solid grey;
+     border-radius: 10px;
+    }
+  
+  #player {
+    background-color: black;
+    position: absolute;
+    top: -10px;
+    left: 0px;
+    width: 18px;
+    height: 18px;
+  }
+    
+  #light {
+    background-color: yellow;
+    position: absolute;
+    top: 0px;
+    left: 100px;
+    width: 20px;
+    height: 25px;
+    
+  }
+  
+  #light2 {
+    background-color: yellow;
+    position: absolute;
+    top: 575px;
+    left: 500px;
+    width: 20px;
+    height: 25px;
+    
+  }
+  
+  #light3 {
+    background-color: yellow;
+    position: absolute;
+    top: 0px;
+    left: 750px;
+    width: 20px;
+    height: 25px;
+    
+  }
+  
+  
+  
+  
+  #wallBoarder1 {
+     background-color: grey;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 35px;
+    height: 300px;
+  }
+  
+  #wallBoarder2 {
+     background-color: grey;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 18px;
+    height: 400px;
+  }
+  
+  #wallBoarder3 {
+     background-color: grey;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    height: 25px;
+  }
+  
+  #wallBoarder4 {
+    background-color: grey;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 600px;
+    height: 25px;
+    
+  }
+  
+  #wallBoarder5 {
+    background-color: grey;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 700px;
+    height: 25px;
+    
+  }
+  
+  #wallBoarder6 {
+    background-color: grey;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 5px;
+    height: 150px;
+    
+  }
+  
+  
+  #mob {
+    background-color: darkred;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 20px;
+    height: 20px;
+    
+  }
+  
+  #mob1 {
+    background-color: darkred;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 20px;
+    height: 20px;
+    
+  }
+  
+  #mob2 {
+    background-color: darkred;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 20px;
+    height: 20px;
+    
+  }
+  
+  
+  #chest {
+    background-color: #6E260E;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 20px;
+    height: 20px;
+    
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

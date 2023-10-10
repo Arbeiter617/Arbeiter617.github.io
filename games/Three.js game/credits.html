@@ -1,0 +1,180 @@
+<!DOCTYPE html><html><head>
+    <style type="text/css">
+    @font-face {
+   font-family: Abadi MT Condensed
+   }
+   body {
+    background-color: #55FF2A;
+    overflow: hidden;
+   }
+   .wrapper {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 600px;
+    margin-left: -300px;
+    font-family: Abadi MT Condensed;
+    text-align: center;
+    color: #fff;
+    animation: 80s credits linear infinite;
+    animation-delay: 1s;
+   }
+   .video_title {
+    margin-bottom: 50px;
+    font-size: 80px;
+    text-shadow: 2px 2px #878787;
+    letter-spacing: 0px;
+    text-outline: #304345;
+    text-decoration: none;
+   }
+   .job_title {
+    margin-bottom: 5px;
+    font-size: 30px;
+    text-shadow: 2px 2px #878787;
+   }
+   .person_name {
+    margin-bottom: 50px;
+    font-size: 50px;
+    font-variant:small-caps;
+    text-shadow: 2px 2px #878787;
+   }
+   @keyframes credits {
+    0% {
+    top: 100%;
+    }
+    100% {
+    top: -500%;
+    }
+   }
+    </style>
+   </head>
+   <body>
+    <style>
+        * {box-sizing: border-box;}
+        
+        body {
+          margin: 0;
+          font-family: Roboto, Helvetica, sans-serif;
+        }
+        
+        .topnav {
+          overflow: hidden;
+          background-color: #ffaa1d;
+        }
+        
+        .topnav a {
+          float: left;
+          display: block;
+          color: black;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 17px;
+        }
+        
+        .topnav a:hover {
+          
+          color: black;
+        }
+        
+        .topnav .search-container {
+          float: right;
+        }
+        
+        .topnav input[type=text] {
+          padding: 6px;
+          margin-top: 8px;
+          font-size: 17px;
+          border: none;
+        }
+        
+        .topnav .search-container button {
+          float: right;
+          padding: 6px 10px;
+          margin-top: 8px;
+          margin-right: 16px;
+          background: #ddd;
+          font-size: 17px;
+          border: none;
+          cursor: pointer;
+        }
+        
+        .topnav .search-container button:hover {
+          background: #ccc;
+        }
+        
+        @media screen and (max-width: 600px) {
+          .topnav .search-container {
+            float: none;
+          }
+          .topnav a, .topnav input[type=text], .topnav .search-container button {
+            float: none;
+            display: block;
+            text-align: left;
+            width: 100%;
+            margin: 0;
+            padding: 14px;
+          }
+          .topnav input[type=text] {
+            border: 1px solid #ccc;  
+          }
+        }
+        
+      </style>
+      <style>
+        h1 {text-align: center;}
+       
+        .name {border: 2px solid white;}
+        .name {border-style: dotted;}
+      
+        .name {text-align: center;}
+    
+    
+        #score {border: 4px solid white;}
+        #score {border-style: solid;}
+      
+        
+      </style>
+
+    <div class="topnav">
+        <h3 class="name", style="font-size: 25px">GameForFun</h3>
+        <a href="info.html">About</a>
+        <a href="game.html">Back To Game</a>
+    
+        <div style="padding-left:16px"></div>
+    </div>
+
+        <!--Music-->
+    <audio id="credits">
+        <source src="creditsMusic.mp3" type="audio/mpeg">
+    </audio>
+    
+<script>
+    var creditsMusic = document.getElementById("credits");
+
+    creditsMusic.play();
+</script>
+
+
+
+    <div class="wrapper">
+    <div class="video_title">The Block Game</div>
+    <div class="job_title">directed by</div>
+    <div class="person_name">Ian Fischer</div>
+    <div class="job_title">produced by</div>
+    <div class="person_name">Ian FIscher</div>
+    <div class="job_title">idea by</div>
+    <div class="person_name">RockPods</div>
+    <div class="job_title">director of photography</div>
+    <div class="person_name">Google</div>
+    <div class="job_title">story</div>
+    <div class="person_name">is there a story?</div>
+    <div class="job_title">assets by</div>
+    <div class="person_name">Ian Fischer</div>
+    <div class="job_title">code by</div>
+    <div class="person_name">Ian Fischer</div>
+    <div class="job_title">music from</div>
+    <div class="person_name">Youtube (Not taking credit for the music!)</div>
+
+   </div>
+   </body></html>

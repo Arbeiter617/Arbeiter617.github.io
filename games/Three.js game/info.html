@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>GameForFun</title>
+    <link rel="icon" href="/assets/images/favicon.png" type="image/png" sizes="16x16">
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+
+
+
+<style>
+* {box-sizing: border-box;}
+
+body {
+  margin: 0;
+  font-family: Roboto, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #ffaa1d;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  
+  color: black;
+}
+
+.topnav .search-container {
+  float: right;
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: #ccc;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;  
+  }
+}
+ h1.dotted {border-style: double;}
+ h2.programmerg1Page {border-style: ridge;}
+p {border-style: double;}
+
+</style>
+
+
+
+<div id="back">
+<a href="home.html" id="backlink">
+<img src="/assets/images/back.png" alt="Home" id="backimg"></a>
+<style>
+#backimg {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 50px;
+  object-fit: scale-down;
+}
+#backlink {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 50px;
+  object-fit: scale-down;
+  color: none;
+}
+body { 
+  background-image: linear-gradient(to bottom right, red, blue);
+  background-repeat: no-repeat;
+  width: 100%;
+  length: 100%;
+  background-size:full;
+  background-attachment: fixed;
+}
+</style>
+    </div>
+
+  </head>
+  <body>
+
+    <!--Music-->
+    <audio id="chill">
+        <source src="chill.mp3" type="audio/mpeg">
+    </audio>
+    
+<script>
+    var backgroundSound = document.getElementById("chill");
+
+    backgroundSound.play();
+</script>
+    
+
+<div class="topnav">
+   <h3 class="name", style="font-size: 25px">GameForFun</h3>
+  <a class="active" href="game.html">BackToGame</a>
+  <a href="about.html">About</a>
+  <a class="active" href="credits.html">Credits</a>
+  
+</div>
+
+<div style="padding-left:16px">
+ 
+</div>
+
+
+<h1 class="dotted", style="font-size:60px;">About The Creator</h1>
+<style>
+  h1 {text-align: center;}
+ 
+  .name {border: 2px solid white;}
+  .name {border-style: dotted;}
+
+  .name {text-align: center;}
+
+
+  .insert {border: 2px solid white;}
+  .insert {border-style: dotted;}
+
+  .insert {text-align: center;}
+  
+</style>
+
+<h1>
+
+<h2 class="programmerg1Page", style="font-size:35px;">Arbeiter617:</h2>
+  <style>
+  h2.programmerg1Page {text-align: center;}
+ </style>
+
+<style>
+  p {text-align: center;}
+  p {font-size: 20px;}
+</style>
+
+
+<center class="insert", style="font-size: 25px">
+ Hello! I have created this simple and fun game purely out of fun. I hope you enjoy!
+    
+</center>
+
+
+<!--Slides-->
+<section>
+    <img class="mySlides" src="1.jpg" style="width:100%">
+    <img class="mySlides" src="2.jpg" style="width:100%">
+    <img class="mySlides" src="3.jpg" style="width:100%">
+    <img class="mySlides" src="4.jpg" style="width:100%">
+ </section>
+    
+ <script>
+     // Automatic Slideshow - change image every 3 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 3000);
+}
+ </script>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+ 
